@@ -99,11 +99,11 @@
                 "category": "Languages & Frameworks",
                 "description": "Core technologies used for front-end development",
                 "technologies": [
-                    { "name": "React 16.8+", "icon": "https://cdn.simpleicons.org/react/61DAFB" },
-                    { "name": "TypeScript (strict)", "icon": "https://cdn.simpleicons.org/typescript/3178C6" },
-                    { "name": "Next.js", "icon": "https://cdn.simpleicons.org/nextdotjs/000000" },
-                    { "name": "Vite", "icon": "https://cdn.simpleicons.org/vite/646CFF" },
-                    { "name": "Webpack 5", "icon": "https://cdn.simpleicons.org/webpack/8DD6F9" }
+                    { "name": "React 16.8+", "icon": "/skills/react.svg" },
+                    { "name": "TypeScript (strict)", "icon": "/skills/typescript.svg" },
+                    { "name": "Next.js", "icon": "/skills/nextdotjs.svg" },
+                    { "name": "Vite", "icon": "/skills/vite.svg" },
+                    { "name": "Webpack 5", "icon": "/skills/webpack.svg" }
                 ]
             },
             {
@@ -111,12 +111,12 @@
                 "category": "State Management",
                 "description": "Tools for managing application state",
                 "technologies": [
-                    { "name": "TanStack Query", "icon": "https://cdn.simpleicons.org/tanstackquery/FF4154" },
-                    { "name": "REST", "icon": "https://cdn.simpleicons.org/rest/02569B" },
-                    { "name": "GraphQL", "icon": "https://cdn.simpleicons.org/graphql/E10098" },
-                    { "name": "Zustand", "icon": "https://cdn.simpleicons.org/zustand/000000" },
-                    { "name": "Redux", "icon": "https://cdn.simpleicons.org/redux/764ABC" },
-                    { "name": "MobX", "icon": "https://cdn.simpleicons.org/mobx/FF9955" }
+                    { "name": "TanStack Query", "icon": "/skills/tanstackquery.svg" },
+                    { "name": "REST", "icon": "/skills/rest-api.svg" },
+                    { "name": "GraphQL", "icon": "/skills/graphql.svg" },
+                    { "name": "Zustand", "icon": "/skills/zustand.svg" },
+                    { "name": "Redux", "icon": "/skills/redux.svg" },
+                    { "name": "MobX", "icon": "/skills/mobx.svg" }
                 ]
             },
             {
@@ -124,8 +124,8 @@
                 "category": "Forms & Validation",
                 "description": "Libraries and tools for form handling and validation",
                 "technologies": [
-                    { "name": "React Hook Form", "icon": "https://cdn.simpleicons.org/reacthookform/EC5990" },
-                    { "name": "Zod", "icon": "https://cdn.simpleicons.org/zod/3E67B1" },
+                    { "name": "React Hook Form", "icon": "/skills/reacthookform.svg" },
+                    { "name": "Zod", "icon": "/skills/zod.svg" },
                     { "name": "Conditional workflows", "icon": null },
                     { "name": "Schema validation", "icon": null }
                 ]
@@ -135,11 +135,11 @@
                 "category": "Testing & CI",
                 "description": "Tools for testing and continuous integration",
                 "technologies": [
-                    { "name": "Jest", "icon": "https://cdn.simpleicons.org/jest/C21325" },
-                    { "name": "Cypress", "icon": "https://cdn.simpleicons.org/cypress/69D3A7" },
-                    { "name": "React Testing Library", "icon": "https://cdn.simpleicons.org/testinglibrary/E33332" },
-                    { "name": "GitHub Actions", "icon": "https://cdn.simpleicons.org/githubactions/2088FF" },
-                    { "name": "CI/CD", "icon": null }
+                    { "name": "Jest", "icon": "/skills/jest.svg" },
+                    { "name": "Cypress", "icon": "/skills/cypress.svg" },
+                    { "name": "React Testing Library", "icon": "/skills/testinglibrary.svg" },
+                    { "name": "GitHub Actions", "icon": "/skills/githubactions.svg" },
+                    { "name": "CI/CD", "icon": "/skills/ci-cd.svg" }
                 ]
             },
             {
@@ -147,10 +147,10 @@
                 "category": "UI Libraries",
                 "description": "Libraries used for building user interfaces",
                 "technologies": [
-                    { "name": "Chakra UI", "icon": "https://cdn.simpleicons.org/chakraui/319795" },
-                    { "name": "Radix UI", "icon": "https://cdn.simpleicons.org/radixui/161618" },
-                    { "name": "TailwindCSS", "icon": "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-                    { "name": "Storybook", "icon": "https://cdn.simpleicons.org/storybook/FF4785" }
+                    { "name": "Chakra UI", "icon": "/skills/chakraui.svg" },
+                    { "name": "Radix UI", "icon": "/skills/radixui.svg" },
+                    { "name": "TailwindCSS", "icon": "/skills/tailwindcss.svg" },
+                    { "name": "Storybook", "icon": "/skills/storybook.svg" }
                 ]
             },
             {
@@ -158,10 +158,10 @@
                 "category": "Back-End Technologies",
                 "description": "Technologies used for back-end development",
                 "technologies": [
-                    { "name": "Node.js", "icon": "https://cdn.simpleicons.org/node.js/339933" },
-                    { "name": "Express.js", "icon": "https://cdn.simpleicons.org/express/000000" },
-                    { "name": "MongoDB", "icon": "https://cdn.simpleicons.org/mongodb/47A248" },
-                    { "name": "pm2", "icon": "https://cdn.simpleicons.org/pm2/2B7A78" }
+                    { "name": "Node.js", "icon": "/skills/nodejs.svg" },
+                    { "name": "Express.js", "icon": "/skills/express.svg" },
+                    { "name": "MongoDB", "icon": "/skills/mongodb.svg" },
+                    { "name": "pm2", "icon": "/skills/pm2.svg" }
                 ]
             }
         ]
@@ -280,6 +280,14 @@
                 "title": "Senior Full Stack Developer",
                 "initials": "/recommendations/anastasiia-nealova.jpeg",
                 "profile_link": "https://www.linkedin.com/in/anastasiia-nealova-6661bb15b/"
+            },
+            {
+                "id": "max-skoryk",
+                "quote": "I worked alongside Oleksandr while he was covering the Front-End Developer role, and it was a great experience.\nWhat I value most about his work is his focus on results and his complete independence. He doesn't just pull tasks from the backlog; he genuinely thinks about how to improve the product. On top of his strong tech skills, Oleksandr is highly productive and proactive - if he spots a bottleneck or a problem in the code, he suggests a solution instead of waiting to be told what to do.\nHe is incredibly easy to work with and a great team player with zero ego. If you need a strong front-end developer who actually delivers and takes ownership, I highly recommend Oleksandr.",
+                "name": "Max Skoryk",
+                "title": "Product & Operational Lead | Strategic Operations & Systems Architecture",
+                "initials": "/recommendations/max-skoryk.jpeg",
+                "profile_link": "https://www.linkedin.com/in/madness-maxim/"
             },
             {
                 "id": "anastasiya-levkevych",

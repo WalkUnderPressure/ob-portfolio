@@ -26,7 +26,7 @@ export default function SkillsSection() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
                 <div className="md:col-span-4 flex items-center gap-3 min-w-0">
                   <div className="text-xs font-mono font-bold flex-shrink-0" style={{ color: "rgb(34, 211, 238)" }}>{skill.id}</div>
-                  <h3 className="text-xl sm:text-2xl font-black leading-tight break-words min-w-0" style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>
+                  <h3 className="text-2xl sm:text-3xl font-black leading-tight break-words min-w-0" style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>
                     {skill.category}
                   </h3>
                 </div>
@@ -35,13 +35,13 @@ export default function SkillsSection() {
                   <div className="flex flex-wrap gap-2">
                     {skill.technologies.map((tech) => (
                       <span key={tech.name}
-                        className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full font-semibold"
+                        className="inline-flex items-center gap-1.5 text-xl px-3 py-1.5 rounded-full font-semibold"
                         style={{ background: "var(--px-pill-bg)", border: "1px solid var(--px-hairline)", color: "var(--px-text)" }}>
                         {tech.icon && (
                           <img
                             src={tech.icon}
                             alt={tech.name}
-                            className="w-4 h-4"
+                            className="w-5 h-5"
                             loading="lazy"
                           />
                         )}
