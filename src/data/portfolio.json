@@ -1,0 +1,305 @@
+{
+    "personal": {
+        "name": "Oleksandr Brynzei",
+        "email": "obrynzei@gmail.com",
+        "phone": "+49 1525 8576 025",
+        "location": "Remote - Germany",
+        "linkedin": "https://www.linkedin.com/in/oleksandr-brynzei",
+        "availability": "Available for Work",
+        "title": "Senior Front-End Developer",
+        "heroDescription": "Senior Front-End Developer with 5+ years delivering production React applications across distributed product teams. Deep expertise in TypeScript and modern build tooling.",
+        "profileImage": "/avatar/linked-in-avatar.jpg",
+        "heroBackgrounds": [
+            "/hero-bg/left.avif",
+            "/hero-bg/middle.avif",
+            "/hero-bg/right.avif"
+        ],
+        "aboutBio": "I am a Senior Front-End Developer with over 5 years of experience in delivering high-quality React applications. I have a strong background in TypeScript and enjoy working in agile teams to create stable and maintainable code. I am passionate about mentoring others and contributing to code quality through active reviews.",
+        "copyright": "© 2026 Oleksandr Brynzei. All rights reserved."
+    },
+    "navigation": {
+        "brand": "Oleksandr Brynzei",
+        "items": [
+            {
+                "label": "Home",
+                "sectionId": "home"
+            },
+            {
+                "label": "Collaborate",
+                "sectionId": "about"
+            },
+            {
+                "label": "Craft",
+                "sectionId": "skills"
+            },
+            {
+                "label": "Journey",
+                "sectionId": "experience"
+            },
+            {
+                "label": "Work",
+                "sectionId": "projects"
+            },
+            {
+                "label": "Foundation",
+                "sectionId": "education"
+            },
+            {
+                "label": "Voices",
+                "sectionId": "testimonials"
+            },
+            {
+                "label": "Connect",
+                "sectionId": "contact"
+            }
+        ]
+    },
+    "sectionTitles": {
+        "about": {
+            "subheading": "Collaborate",
+            "heading": "About me",
+            "bgImage": "/sections-bg/collaborate.avif"
+        },
+        "skills": {
+            "subheading": "Craft",
+            "heading": "What I bring",
+            "bgImage": "/sections-bg/craft.avif"
+        },
+        "experience": {
+            "subheading": "Journey",
+            "heading": "The journey",
+            "bgImage": "/sections-bg/journey.avif"
+        },
+        "projects": {
+            "subheading": "Work",
+            "heading": "Selected work",
+            "bgImage": "/sections-bg/work.avif"
+        },
+        "education": {
+            "subheading": "Foundation",
+            "heading": "The foundation",
+            "bgImage": "/sections-bg/foundation.avif"
+        },
+        "testimonials": {
+            "subheading": "Voices",
+            "heading": "Kind words",
+            "bgImage": "/sections-bg/feedback.jpg"
+        },
+        "contact": {
+            "subheading": "Connect",
+            "heading": "Let's talk",
+            "bgImage": "/sections-bg/connect.avif"
+        }
+    },
+    "skills": {
+        "description": "A toolkit honed through real-world projects. Every category below represents tools I reach for daily.",
+        "items": [
+            {
+                "id": "01",
+                "category": "Languages & Frameworks",
+                "description": "Core technologies used for front-end development",
+                "technologies": [
+                    { "name": "React 16.8+", "icon": "https://cdn.simpleicons.org/react/61DAFB" },
+                    { "name": "TypeScript (strict)", "icon": "https://cdn.simpleicons.org/typescript/3178C6" },
+                    { "name": "Next.js", "icon": "https://cdn.simpleicons.org/nextdotjs/000000" },
+                    { "name": "Vite", "icon": "https://cdn.simpleicons.org/vite/646CFF" },
+                    { "name": "Webpack 5", "icon": "https://cdn.simpleicons.org/webpack/8DD6F9" }
+                ]
+            },
+            {
+                "id": "02",
+                "category": "State Management",
+                "description": "Tools for managing application state",
+                "technologies": [
+                    { "name": "TanStack Query", "icon": "https://cdn.simpleicons.org/tanstackquery/FF4154" },
+                    { "name": "REST", "icon": "https://cdn.simpleicons.org/rest/02569B" },
+                    { "name": "GraphQL", "icon": "https://cdn.simpleicons.org/graphql/E10098" },
+                    { "name": "Zustand", "icon": "https://cdn.simpleicons.org/zustand/000000" },
+                    { "name": "Redux", "icon": "https://cdn.simpleicons.org/redux/764ABC" },
+                    { "name": "MobX", "icon": "https://cdn.simpleicons.org/mobx/FF9955" }
+                ]
+            },
+            {
+                "id": "03",
+                "category": "Forms & Validation",
+                "description": "Libraries and tools for form handling and validation",
+                "technologies": [
+                    { "name": "React Hook Form", "icon": "https://cdn.simpleicons.org/reacthookform/EC5990" },
+                    { "name": "Zod", "icon": "https://cdn.simpleicons.org/zod/3E67B1" },
+                    { "name": "Conditional workflows", "icon": null },
+                    { "name": "Schema validation", "icon": null }
+                ]
+            },
+            {
+                "id": "04",
+                "category": "Testing & CI",
+                "description": "Tools for testing and continuous integration",
+                "technologies": [
+                    { "name": "Jest", "icon": "https://cdn.simpleicons.org/jest/C21325" },
+                    { "name": "Cypress", "icon": "https://cdn.simpleicons.org/cypress/69D3A7" },
+                    { "name": "React Testing Library", "icon": "https://cdn.simpleicons.org/testinglibrary/E33332" },
+                    { "name": "GitHub Actions", "icon": "https://cdn.simpleicons.org/githubactions/2088FF" },
+                    { "name": "CI/CD", "icon": null }
+                ]
+            },
+            {
+                "id": "05",
+                "category": "UI Libraries",
+                "description": "Libraries used for building user interfaces",
+                "technologies": [
+                    { "name": "Chakra UI", "icon": "https://cdn.simpleicons.org/chakraui/319795" },
+                    { "name": "Radix UI", "icon": "https://cdn.simpleicons.org/radixui/161618" },
+                    { "name": "TailwindCSS", "icon": "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+                    { "name": "Storybook", "icon": "https://cdn.simpleicons.org/storybook/FF4785" }
+                ]
+            },
+            {
+                "id": "06",
+                "category": "Back-End Technologies",
+                "description": "Technologies used for back-end development",
+                "technologies": [
+                    { "name": "Node.js", "icon": "https://cdn.simpleicons.org/node.js/339933" },
+                    { "name": "Express.js", "icon": "https://cdn.simpleicons.org/express/000000" },
+                    { "name": "MongoDB", "icon": "https://cdn.simpleicons.org/mongodb/47A248" },
+                    { "name": "pm2", "icon": "https://cdn.simpleicons.org/pm2/2B7A78" }
+                ]
+            }
+        ]
+    },
+    "experience": {
+        "description": "A timeline of roles, responsibilities, and the impact I've had along the way.",
+        "items": [
+            {
+                "id": "01",
+                "period": "Jun 2024 - Present",
+                "title": "Senior React Front-End Developer",
+                "company": "Projestic",
+                "description": [
+                    "Engineered core product features with React, TypeScript (strict), Zustand, React Hook Form, Zod, TailwindCSS, and Radix UI, prioritising stability and long-term maintainability.",
+                    "Delivered a dynamic form builder (comparable to Google Forms) with custom fields, e-signatures, Zod schema validation, and conditional branching — materially reducing data-entry errors and manual processing overhead.",
+                    "Integrated Clerk for authentication and RBAC, hardening access-control flows with minimal added complexity.",
+                    "Participated in agile ceremonies, conducted regular code reviews, and collaborated with Design and Back end to scope and ship features on schedule."
+                ]
+            },
+            {
+                "id": "02",
+                "period": "May 2022 - Jun 2024",
+                "title": "Lead Front-End Engineer",
+                "company": "Ruliad (Circle)",
+                "description": [
+                    "Led a large-scale codebase refactor — migrating bundle pipeline to Vite, eliminating unused dependencies, and applying strict TypeScript — resulting in noticeably faster builds and improved runtime performance.",
+                    "Scaled the platform to handle a significantly higher concurrent user base by introducing TanStack Query caching, row virtualization, and server-side pagination on the application's most-trafficked views.",
+                    "Designed, built, and governed a 100+ component design system with Chakra UI and Storybook, cutting time-to-feature and establishing consistent UI standards across the engineering team.",
+                    "Owned code review culture, maintained CI quality standards, and mentored junior and mid-level engineers through structured feedback and pair programming."
+                ]
+            },
+            {
+                "id": "03",
+                "period": "Jun 2019 - Feb 2022",
+                "title": "Full-Stack Developer",
+                "company": "Golden Team",
+                "description": [
+                    "Built a delivery photo-verification module that improved order accuracy and supported logistics operations end-to-end.",
+                    "Introduced multi-theme React components with server-side rendering, integrating Airtable and Mailjet and cutting customer-service inquiries noticeably.",
+                    "Delivered a multilingual, responsive interface with role-based access control, boosting user engagement and improving accessibility.",
+                    "Automated operational dashboards and email notifications via CRON jobs, freeing the team from significant manual monitoring effort each week."
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "description": "A curated set of recent projects, each one shaped by collaboration, constraints, and craft.",
+        "items": [
+            {
+                "id": "01",
+                "title": "PsychAssist",
+                "description": "An AI-powered platform that helps psychologists draft clinical assessment reports in their own voice.",
+                "url": "https://www.psychassist.ai/",
+                "image": "/projects/psychassist.png"
+            },
+            {
+                "id": "02",
+                "title": "Circle.Help",
+                "description": "A social platform connecting people who need help with volunteers ready to give it.",
+                "url": "https://circle.help/",
+                "image": "/projects/circle-help.png"
+            },
+            {
+                "id": "03",
+                "title": "Circle of Toys",
+                "description": "A donation platform where people send toys directly to children in need.",
+                "url": "https://circleoftoys.online/",
+                "image": "/projects/circle-of-toys.png"
+            },
+            {
+                "id": "04",
+                "title": "Podly",
+                "description": "A research tool that helps print-on-demand sellers find trending products and check trademarks.",
+                "url": "https://podly.co/",
+                "image": "/projects/podly.png"
+            },
+            {
+                "id": "05",
+                "title": "Mengantar",
+                "description": "A shipping platform for Indonesian sellers with COD delivery, tracking, and discounted rates.",
+                "url": "https://www.mengantar.com/",
+                "image": "/projects/mengantar.png"
+            }
+        ]
+    },
+    "education": {
+        "description": "Academic milestones and the credentials that shaped my technical foundation.",
+        "items": [
+            {
+                "degree": "Master's Degree, Software Engineering",
+                "institution": "Admiral Makarov National University of Shipbuilding",
+                "year": "Sep 2021 - Dec 2022"
+            },
+            {
+                "degree": "Bachelor's Degree, Software Engineering",
+                "institution": "Institute of Engineering, National University of Zaporizhzhya",
+                "year": "Sep 2017 - Jun 2021"
+            }
+        ]
+    },
+    "testimonials": {
+        "description": "What collaborators and clients have said about working with me.",
+        "items": [
+            {
+                "id": "daryna-chepynoga",
+                "quote": "I worked with Oleksandr on the Circle.Help and Circle of Toys projects at RULIAD. He is a very responsible developer and someone you can always rely on.\nOleksandr is open to discussions, always willing to share his ideas and offer his own perspective. He never completed tasks just for the sake of ticking a box. Whenever he noticed that something was inefficient, wasn't working properly, or could be done in a better way, he would speak up and suggest an alternative.\nHe was easy to work with because he cared not only about his own part of the work, but also about the overall result of the project.\nOleksandr is a strong developer and a genuinely pleasant person to work with. I would be happy to work with him again as part of the same team.",
+                "name": "Daryna Chepynoga",
+                "title": "Head of Marketing",
+                "initials": "/recommendations/daryna-chepynoga.jpeg",
+                "profile_link": "https://www.linkedin.com/in/daryna-chepynoga-060822241/"
+            },
+            {
+                "id": "anastasiia-nealova",
+                "quote": "I worked with Oleksandr at Golden Team, but I've actually known him since university. He always works hard and likes learning new things. He isn't afraid to take on new challenges and is always looking for ways to improve.\nWorking with him is a great experience. He's a good team player, easy to communicate with, and always happy to discuss ideas and find the best solution. He often comes up with good technical ideas and turns them into real working features.\nOleksandr is someone you can rely on, and I'd be happy to work with him again",
+                "name": "Anastasiia Nealova",
+                "title": "Senior Full Stack Developer",
+                "initials": "/recommendations/anastasiia-nealova.jpeg",
+                "profile_link": "https://www.linkedin.com/in/anastasiia-nealova-6661bb15b/"
+            },
+            {
+                "id": "anastasiya-levkevych",
+                "quote": "Working with Oleksandr at Ruliad was genuinely one of the most enjoyable collaborations I've had.\nWhat I appreciated most was how easy it was to work together. Communication never felt like a blocker—it was part of the solution. Whenever something needed clarification or discussion, Oleksandr was always open to jumping on a quick call, aligning on the best approach, and moving forward. That mindset made even challenging tasks feel straightforward.\nHe is responsible, reliable, and always focused on achieving the best possible outcome rather than simply completing a task. You can tell he cares about the quality of his work, and it consistently shows in the final result.\nBeyond his technical skills, Oleksandr brings a collaborative attitude that positively influences the whole team. He's the kind of developer who listens, shares ideas, welcomes feedback, and genuinely wants to build a better product - not just write code.\nI'd be happy to work with Oleksandr again and can confidently recommend him to any team looking for a skilled Frontend Developer and a great teammate.",
+                "name": "Anastasiya Levkevych",
+                "title": "QA Engineer",
+                "initials": "/recommendations/anastasiya-levkevych.jpeg",
+                "profile_link": "https://www.linkedin.com/in/anastasiya-levkevych-27204921a/"
+            },
+            {
+                "id": "oleksii-dziubak",
+                "quote": "I had the pleasure of collaborating with Oleksandr as a frontend developer at RULIAD. We spent a lot of time together discussing and standardizing our component library, making sure design and development stayed aligned on how components should look, behave, and scale across the product. He was proactive about surfacing edge cases early and translating our designs into pixel-perfect, consistent UI which kept our design-to-dev handoff smooth and saved a lot of back-and-forth. Beyond the technical execution, he was reliable, communicative, and easy to work with under deadlines the kind of developer who makes a designer's job easier. I'd gladly collaborate with him again on any project that needs a developer who brings real attention to design detail.",
+                "name": "Oleksii Dziubak",
+                "title": "Design Engineer",
+                "initials": "/recommendations/oleksii-dziubak.jpeg",
+                "profile_link": "https://www.linkedin.com/in/oleksii-dziubak/"
+            }
+        ]
+    },
+    "contact": {
+        "description": "Have a project in mind, or just want to say hi? I'm always open to interesting conversations."
+    }
+}
