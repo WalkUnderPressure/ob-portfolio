@@ -12,23 +12,24 @@ import Footer from "./components/Footer.jsx";
 function App() {
   return (
     <div className="parallax-tpl min-h-screen">
-      <link
-        href="https://fonts.googleapis.com/css2?family=Space%20Grotesk:wght@400;600;700&family=IBM%20Plex%20Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-      />
-
       <Navbar />
 
       <main>
-        <section id="home"><HeroSection /></section>
-        <section id="about"><AboutSection /></section>
-        <section id="skills"><SkillsSection /></section>
-        <section id="experience"><ExperienceSection /></section>
+        <HeroSection />
 
-        <section id="projects"><ProjectsSection /></section>
-        <section id="education"><EducationSection /></section>
-        <section id="testimonials"><TestimonialsSection /></section>
-        <section id="contact"><ContactSection /></section>
+        <AboutSection />
+
+        <SkillsSection />
+
+        <ExperienceSection />
+
+        <ProjectsSection />
+
+        <EducationSection />
+
+        <TestimonialsSection />
+
+        <ContactSection />
       </main>
       <Footer />
     </div>

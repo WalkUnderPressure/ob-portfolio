@@ -5,6 +5,7 @@ import data from "../data/portfolio.json";
 
 export default function ContactSection() {
   const { personal, contact, sectionTitles } = data;
+
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async (text) => {
@@ -13,72 +14,76 @@ export default function ContactSection() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   return (
-    <section className="relative">
+    <section id="contact" className="relative pt-16">
       <SectionTitle
         subheading={sectionTitles.contact.subheading}
         heading={sectionTitles.contact.heading}
         bgImage={sectionTitles.contact.bgImage}
       />
-      <div className="mx-auto max-w-5xl px-4 pb-24 pt-12">
+
+      <div className="mx-auto max-w-5xl px-4 pt-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 mb-12">
-          <h2 className="col-span-1 text-3xl md:text-4xl font-black md:col-span-4 leading-tight" style={{ color: "var(--px-text)" }}>
-            {sectionTitles.contact.heading}<span style={{ color: "rgb(34, 211, 238)" }}>.</span>
+          <h2 className="col-span-1 text-h2 md:col-span-4" style={{ color: "var(--foreground)" }}>
+            {sectionTitles.contact.heading}
+            <span style={{ color: "var(--accent)" }}>.</span>
           </h2>
-          <p className="col-span-1 md:col-span-8 text-lg md:text-xl leading-relaxed" style={{ color: "var(--px-muted)" }}>
+          <p className="col-span-1 md:col-span-8 text-body" style={{ color: "var(--muted-foreground)" }}>
             {contact.description}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: "var(--px-hairline)" }}>
-          <div className="p-8 sm:p-12" style={{ background: "var(--px-card-bg)" }}>
-            <div className="flex items-center gap-3 mb-4 text-xs font-bold uppercase tracking-[0.25em]" style={{ color: "rgb(34, 211, 238)" }}>
+
+        <div className="space-y-6">
+          {/* Secondary Contact Info */}
+          <div className="flex flex-wrap gap-6 text-body" style={{ color: "var(--muted-foreground)" }}>
+            <div className="flex items-center gap-2">
               <MailSmallIcon />
-              <span>Email</span>
-            </div>
-            <div className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight break-words flex items-start gap-3"
-              style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>
-              {personal.email}
+              <a
+                href={`mailto:${personal.email}`}
+                className="hover:underline"
+                style={{ color: "var(--foreground)" }}
+              >
+                {personal.email}
+              </a>
+
               <button
                 onClick={() => copyToClipboard(personal.email)}
-                className="flex-shrink-0 mt-1 opacity-40 hover:opacity-100 transition-opacity"
+                className="flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity ml-1"
                 aria-label="Copy email to clipboard"
-                title="Copy email">
+                title="Copy email"
+              >
                 {copied ? <CheckIcon /> : <CopyIcon />}
               </button>
             </div>
-          </div>
-          <a href={`mailto:${personal.email}`}
-            className="group p-8 sm:p-12 flex flex-col justify-between"
-            style={{ background: "var(--px-card-bg)" }}>
-            <div className="flex items-center gap-3 mb-4 text-xs font-bold uppercase tracking-[0.25em]" style={{ color: "rgb(34, 211, 238)" }}>
-              <span>Start a project</span>
-              <ArrowUpRight />
-            </div>
-            <div className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight" style={{ color: "var(--px-text)" }}>
-              Send me a message<span style={{ color: "rgb(34, 211, 238)" }}>.</span>
-            </div>
-          </a>
-          <div className="p-8 sm:p-10" style={{ background: "var(--px-card-bg)" }}>
-            <div className="flex items-center gap-3 mb-3 text-xs font-bold uppercase tracking-[0.25em]" style={{ color: "rgb(34, 211, 238)" }}>
+            <div className="flex items-center gap-2">
               <PhoneSmallIcon />
-              <span>Phone</span>
+              <a
+                href={`tel:${personal.phone}`}
+                className="hover:underline"
+                style={{ color: "var(--foreground)" }}
+              >
+                {personal.phone}
+              </a>
             </div>
-            <div className="text-lg font-semibold break-words" style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>
-              {personal.phone}
-            </div>
-          </div>
-          <div className="p-8 sm:p-10" style={{ background: "var(--px-card-bg)" }}>
-            <div className="flex items-center gap-3 mb-3 text-xs font-bold uppercase tracking-[0.25em]" style={{ color: "rgb(34, 211, 238)" }}>
+            <div className="flex items-center gap-2">
               <MapSmallIcon />
-              <span>Location</span>
+              <span style={{ color: "var(--foreground)" }}>{personal.location}</span>
             </div>
-            <div className="text-lg font-semibold break-words" style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>
-              {personal.location}
-            </div>
+
+            <a
+              href={`mailto:${personal.email}`}
+              className="px-8 py-4 cursor-pointer text-h3 font-medium rounded-lg transition-all duration-200 hover:scale-110"
+              style={{
+                backgroundColor: "var(--accent)",
+                color: "var(--background)"
+              }}
+            >
+              Send me a message
+            </a>
           </div>
         </div>
       </div>
@@ -88,7 +93,7 @@ export default function ContactSection() {
 
 function MailSmallIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
       <rect x="2" y="4" width="20" height="16" rx="2" />
     </svg>
@@ -97,7 +102,7 @@ function MailSmallIcon() {
 
 function PhoneSmallIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
     </svg>
   );
@@ -105,7 +110,7 @@ function PhoneSmallIcon() {
 
 function MapSmallIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
       <circle cx="12" cy="10" r="3" />
     </svg>
@@ -123,7 +128,7 @@ function CopyIcon() {
 
 function CheckIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
       <path d="M20 6 9 17l-5-5" />
     </svg>
   );

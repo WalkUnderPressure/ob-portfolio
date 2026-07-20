@@ -6,73 +6,93 @@ export default function ProjectsSection() {
   const { projects, sectionTitles } = data;
 
   return (
-    <section className="relative">
+    <section id="projects" className="relative pt-16">
       <SectionTitle
         subheading={sectionTitles.projects.subheading}
         heading={sectionTitles.projects.heading}
         bgImage={sectionTitles.projects.bgImage}
       />
 
-      <div className="mx-auto max-w-6xl px-4 pb-24 pt-12">
+      <div className="mx-auto max-w-6xl px-4 pt-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 mb-12">
-          <h2 className="col-span-1 text-3xl md:text-4xl font-black md:col-span-4 leading-tight" style={{ color: "var(--px-text)" }}>
-            {sectionTitles.projects.heading}<span style={{ color: "rgb(34, 211, 238)" }}>.</span>
+          <h2 className="col-span-1 text-h2 md:col-span-4" style={{ color: "var(--foreground)" }}>
+            {sectionTitles.projects.heading}<span style={{ color: "var(--accent)" }}>.</span>
           </h2>
 
-          <p className="col-span-1 md:col-span-8 text-lg md:text-xl leading-relaxed" style={{ color: "var(--px-muted)" }}>
+          <p className="col-span-1 md:col-span-8 text-body" style={{ color: "var(--muted-foreground)" }}>
             {projects.description}
           </p>
         </div>
-        <div className="space-y-20 sm:space-y-28">
+        <div className="space-y-20 sm:space-y-28 stagger-animate">
           {projects.items.map((project) => (
-            <div key={project.id} className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+            <a
+              key={project.id}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card block grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 md:gap-12 items-center stagger-item group"
+            >
               <div className="md:col-span-7">
-                <div className="aspect-[16/10] overflow-hidden rounded-2xl" style={{ border: "1px dashed var(--px-dashed)" }}>
-                  {/* <div className="relative w-full h-full overflow-hidden"
-                    style={{ background: "linear-gradient(135deg, var(--px-card-bg) 0%, var(--px-card-bg-hover) 100%)" }}>
-                    <div className="absolute inset-0 opacity-[0.04]"
-                      style={{ backgroundImage: "linear-gradient(to right, var(--px-text) 1px, transparent 1px), linear-gradient(to bottom, var(--px-text) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-                    <div className="absolute -top-12 -right-12 w-48 h-48 rotate-45"
-                      style={{ background: "linear-gradient(135deg, rgb(34, 211, 238) 0%, rgba(34, 211, 238, 0) 60%)", opacity: 0.12 }} />
-                    <div className="absolute -bottom-8 -left-4 select-none pointer-events-none font-black leading-none"
-                      style={{ fontSize: "clamp(11rem, 32vw, 22rem)", color: "transparent", WebkitTextStroke: "2px rgba(34, 211, 238, 0.2)", letterSpacing: "-0.06em" }}>
-                      {project.id}
-                    </div>
-                    <div className="absolute top-6 left-6 sm:top-8 sm:left-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em]"
-                      style={{ color: "rgb(34, 211, 238)" }}>
-                      <span className="inline-block w-8 h-px" style={{ background: "rgb(34, 211, 238)" }}></span>
-                      <span>Project {project.id}</span>
-                    </div>
-                    <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 max-w-[70%] text-right">
-                      <h4 className="text-2xl sm:text-3xl md:text-4xl font-black leading-[1.05] tracking-tight break-words"
-                        style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>
-                        {project.title}
-                      </h4>
-                    </div>
-                  </div> */}
-                  <img src={project.image} className='w-full h-full object-cover'></img>
+                <div className="aspect-[16/10] overflow-hidden rounded-2xl relative" style={{ border: "1px solid var(--border)", transition: "border-color 0.3s ease" }}>
+                  <img src={project.image} alt={project.title} className='w-full h-full object-cover' width="640" height="400"></img>
+                  {project.url && (
+                    <span
+                      className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2"
+                      style={{
+                        background: "var(--accent)",
+                        color: "var(--accent-foreground)",
+                        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
+                      }}
+                    >
+                      <span className="live-dot"></span>
+                      Live
+                    </span>
+                  )}
                 </div>
               </div>
 
-              <div className="md:col-span-5 min-w-0">
-                <div className="text-xs font-mono font-bold mb-3" style={{ color: "rgb(34, 211, 238)" }}>Project {project.id}</div>
+                <div className="md:col-span-5 min-w-0">
+                  <div className="text-caption font-mono mb-3" style={{ color: "var(--accent)" }}>Project {project.id}</div>
                 <div className="flex items-start gap-3 mb-4">
-                  <h3 className="text-2xl sm:text-3xl font-black leading-tight flex-1" style={{ color: "var(--px-text)" }}>
+                  <h3 className="text-h3 flex-1" style={{ color: "var(--foreground)" }}>
                     {project.title}
                   </h3>
                   <span className="relative inline-flex items-center flex-shrink-0">
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title}`}
-                      className="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110"
-                      style={{ background: "rgb(34, 211, 238)", color: "rgb(255, 255, 255)" }}>
-                      <ArrowUpRight />
-                    </a>
+                    <span
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                      style={{ background: "var(--accent)", color: "var(--accent-foreground)" }}
+                    >
+                      <span className="transition-transform duration-300 group-hover:rotate-45">
+                        <ArrowUpRight />
+                      </span>
+                    </span>
                   </span>
                 </div>
-                <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: "var(--px-muted)" }}>
+                <div className="view-project-text opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-sm font-medium" style={{ color: "var(--accent)" }}>View project</span>
+                </div>
+                <p className="text-body mb-4" style={{ color: "var(--muted-foreground)" }}>
                   {project.description}
                 </p>
+                {project.tags && project.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 rounded-full text-xs font-medium"
+                        style={{
+                          background: "var(--surface-alt)",
+                          color: "var(--muted-foreground)",
+                          border: "1px solid var(--border)"
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

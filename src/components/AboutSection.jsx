@@ -6,29 +6,59 @@ export default function AboutSection() {
   const { personal, sectionTitles } = data;
 
   return (
-    <section className="relative">
+    <section id="about" className="relative pt-16">
       <SectionTitle
         subheading={sectionTitles.about.subheading}
         heading={sectionTitles.about.heading}
         bgImage={sectionTitles.about.bgImage}
       />
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-        <h2 className="col-span-1 text-3xl md:text-4xl font-black md:col-span-4 leading-tight" style={{ color: "var(--px-text)" }}>
-          About me<span style={{ color: "rgb(34, 211, 238)" }}>.</span>
+
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pt-12 md:grid-cols-12">
+        <h2 className="col-span-1 text-h2 md:col-span-4" style={{ color: "var(--foreground)" }}>
+          About me<span style={{ color: "var(--accent)" }}>.</span>
         </h2>
+
         <div className="col-span-1 md:col-span-8">
-          <p className="mb-8 text-lg md:text-xl leading-relaxed" style={{ color: "var(--px-muted)" }}>
-            {personal.aboutBio}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-8" style={{ borderTop: "1px solid var(--px-hairline)" }}>
+          <div>
+            <h3 className="text-h3 mb-3" style={{ color: "var(--accent)" }}>About me</h3>
+
+            <p className="mb-8 text-body" style={{ color: "var(--muted-foreground)" }}>
+              {personal.aboutBio.text}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-h3 mb-3" style={{ color: "var(--accent)" }}>Business Impact</h3>
+            <div className="space-y-px" style={{ background: "var(--border)" }}>
+              {personal.aboutBio.impacts.map((impact) => (
+                <div
+                  key={impact.title}
+                  className="px-6 py-8 sm:px-8 sm:py-10"
+                  style={{ background: "var(--surface)" }}
+                >
+                  <h3 className="text-h3 flex items-center gap-2 mb-3" style={{ color: "var(--foreground)" }}>
+                    <span style={{ color: "var(--accent)" }}>{impact.icon}</span>
+                    {impact.title}
+                  </h3>
+                  <p className="text-body" style={{ color: "var(--muted-foreground)" }}>
+                    <strong style={{ color: "var(--foreground)" }}>{impact.highlight}</strong>{" "}
+                    {impact.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
             <InfoRow icon={<UserIcon />} label="Name" value={personal.name} />
             <InfoRow icon={<MailIcon />} label="Email" value={personal.email} />
             <InfoRow icon={<PhoneIcon />} label="Phone" value={personal.phone} />
             <InfoRow icon={<MapPinIcon />} label="Location" value={personal.location} />
           </div>
+
           <a href={`mailto:${personal.email}`}
-            className="mt-10 inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-bold uppercase tracking-[0.2em] transition-transform hover:scale-105"
-            style={{ background: "var(--px-primary)", color: "rgb(255, 255, 255)" }}>
+            className="mt-10 inline-flex items-center gap-2 px-7 py-4 rounded-full text-caption transition-all duration-200 hover:scale-110"
+            style={{ background: "var(--accent)", color: "var(--accent-foreground)" }}>
             Get in touch <ArrowUpRight />
           </a>
         </div>
@@ -37,13 +67,13 @@ export default function AboutSection() {
   );
 }
 
-function InfoRow({ icon, label, value }) {
+  function InfoRow({ icon, label, value }) {
   return (
     <div className="flex items-start gap-3 min-w-0">
-      <div className="shrink-0 mt-1" style={{ color: "rgb(34, 211, 238)" }}>{icon}</div>
+      <div className="shrink-0 mt-1" style={{ color: "var(--accent)" }}>{icon}</div>
       <div className="min-w-0 flex-1">
-        <div className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1" style={{ color: "var(--px-subtle)" }}>{label}</div>
-        <div className="text-sm font-semibold break-words" style={{ color: "var(--px-text)", overflowWrap: "anywhere" }}>{value}</div>
+        <div className="text-caption mb-1" style={{ color: "var(--muted-foreground)" }}>{label}</div>
+        <div className="text-h3 break-words" style={{ color: "var(--foreground)", overflowWrap: "anywhere" }}>{value}</div>
       </div>
     </div>
   );

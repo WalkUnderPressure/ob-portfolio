@@ -7,14 +7,48 @@
         "linkedin": "https://www.linkedin.com/in/oleksandr-brynzei",
         "availability": "Available for Work",
         "title": "Senior Front-End Developer",
-        "heroDescription": "Senior Front-End Developer with 5+ years delivering production React applications across distributed product teams. Deep expertise in TypeScript and modern build tooling.",
+        "heroDescription": "Senior Front-End Developer with 6+ years delivering production React and TypeScript applications across distributed product teams. Experienced with AI-assisted development tools. Focused on performance and scalable architecture.",
         "profileImage": "/avatar/linked-in-avatar.jpg",
         "heroBackgrounds": [
             "/hero-bg/left.avif",
             "/hero-bg/middle.avif",
             "/hero-bg/right.avif"
         ],
-        "aboutBio": "I am a Senior Front-End Developer with over 5 years of experience in delivering high-quality React applications. I have a strong background in TypeScript and enjoy working in agile teams to create stable and maintainable code. I am passionate about mentoring others and contributing to code quality through active reviews.",
+        "aboutBio": {
+            "text": "I build web applications that solve real business problems—not just polished interfaces. My focus is creating products that reduce operational costs, improve user experience, and help companies scale through thoughtful engineering, maintainable architecture, and measurable business outcomes.",
+            "impacts": [
+                {
+                    "icon": "💰",
+                    "title": "Reduced operating costs",
+                    "highlight": "Eliminated recurring licensing fees",
+                    "description": "by replacing paid third-party plugins with custom in-house solutions, giving the client full ownership while lowering long-term expenses."
+                },
+                {
+                    "icon": "📈",
+                    "title": "Increased platform adoption",
+                    "highlight": "Designed a guided messaging experience",
+                    "description": "that walks customers through the entire shipping and delivery process, making the platform easier to use and increasing customer adoption."
+                },
+                {
+                    "icon": "🎯",
+                    "title": "Reduced support workload",
+                    "highlight": "Built a package tracking system",
+                    "description": "that cut customer support requests by 50% and reduced negative reviews by one-third, giving users better visibility into their deliveries."
+                },
+                {
+                    "icon": "⚡",
+                    "title": "Improved operational efficiency",
+                    "highlight": "Developed a real-time resource monitoring system",
+                    "description": "that helped teams identify and resolve urgent operational needs faster, increasing overall productivity by 20%."
+                },
+                {
+                    "icon": "📊",
+                    "title": "Increased revenue",
+                    "highlight": "Built a calendar-based subscription pricing dashboard",
+                    "description": "that enabled better pricing decisions and supported a 10% increase in service package revenue."
+                }
+            ]
+        },
         "copyright": "© 2026 Oleksandr Brynzei. All rights reserved."
     },
     "navigation": {
@@ -66,8 +100,8 @@
             "bgImage": "/sections-bg/craft.avif"
         },
         "experience": {
-            "subheading": "Journey",
-            "heading": "The journey",
+            "subheading": "My experience",
+            "heading": "Journey",
             "bgImage": "/sections-bg/journey.avif"
         },
         "projects": {
@@ -77,7 +111,7 @@
         },
         "education": {
             "subheading": "Foundation",
-            "heading": "The foundation",
+            "heading": "Education",
             "bgImage": "/sections-bg/foundation.avif"
         },
         "testimonials": {
@@ -96,72 +130,218 @@
         "items": [
             {
                 "id": "01",
-                "category": "Languages & Frameworks",
-                "description": "Core technologies used for front-end development",
+                "category": "AI Development",
+                "description": "Leveraging AI tools to accelerate software development, improve code quality, and enhance engineering productivity",
                 "technologies": [
-                    { "name": "React 16.8+", "icon": "/skills/react.svg" },
-                    { "name": "TypeScript (strict)", "icon": "/skills/typescript.svg" },
-                    { "name": "Next.js", "icon": "/skills/nextdotjs.svg" },
-                    { "name": "Vite", "icon": "/skills/vite.svg" },
-                    { "name": "Webpack 5", "icon": "/skills/webpack.svg" }
+                    {
+                        "name": "AI-Assisted Development"
+                    },
+                    {
+                        "name": "Development with AI Agents"
+                    },
+                    {
+                        "name": "Prompt Engineering"
+                    },
+                    {
+                        "name": "AI Code Review"
+                    },
+                    {
+                        "name": "AI-Assisted Testing"
+                    },
+                    {
+                        "name": "AI-Assisted Debugging"
+                    }
                 ]
             },
             {
                 "id": "02",
-                "category": "State Management",
-                "description": "Tools for managing application state",
+                "category": "Languages & Frameworks",
+                "description": "Core technologies used for front-end development",
                 "technologies": [
-                    { "name": "TanStack Query", "icon": "/skills/tanstackquery.svg" },
-                    { "name": "REST", "icon": "/skills/rest-api.svg" },
-                    { "name": "GraphQL", "icon": "/skills/graphql.svg" },
-                    { "name": "Zustand", "icon": "/skills/zustand.svg" },
-                    { "name": "Redux", "icon": "/skills/redux.svg" },
-                    { "name": "MobX", "icon": "/skills/mobx.svg" }
+                    {
+                        "name": "React 16.8+",
+                        "icon": "/skills/react.svg"
+                    },
+                    {
+                        "name": "TypeScript (strict)",
+                        "icon": "/skills/typescript.svg"
+                    },
+                    {
+                        "name": "Next.js",
+                        "icon": "/skills/nextdotjs.svg"
+                    },
+                    {
+                        "name": "Vite",
+                        "icon": "/skills/vite.svg"
+                    },
+                    {
+                        "name": "Webpack 5",
+                        "icon": "/skills/webpack.svg"
+                    }
                 ]
             },
             {
                 "id": "03",
-                "category": "Forms & Validation",
-                "description": "Libraries and tools for form handling and validation",
+                "category": "State Management",
+                "description": "Tools for managing application state",
                 "technologies": [
-                    { "name": "React Hook Form", "icon": "/skills/reacthookform.svg" },
-                    { "name": "Zod", "icon": "/skills/zod.svg" },
-                    { "name": "Conditional workflows", "icon": null },
-                    { "name": "Schema validation", "icon": null }
+                    {
+                        "name": "TanStack Query",
+                        "icon": "/skills/tanstackquery.svg"
+                    },
+                    {
+                        "name": "REST",
+                        "icon": "/skills/rest-api.svg"
+                    },
+                    {
+                        "name": "GraphQL",
+                        "icon": "/skills/graphql.svg"
+                    },
+                    {
+                        "name": "Zustand",
+                        "icon": "/skills/zustand.svg"
+                    },
+                    {
+                        "name": "Redux",
+                        "icon": "/skills/redux.svg"
+                    },
+                    {
+                        "name": "MobX",
+                        "icon": "/skills/mobx.svg"
+                    }
                 ]
             },
             {
                 "id": "04",
-                "category": "Testing & CI",
-                "description": "Tools for testing and continuous integration",
+                "category": "Forms & Validation",
+                "description": "Libraries and tools for form handling and validation",
                 "technologies": [
-                    { "name": "Jest", "icon": "/skills/jest.svg" },
-                    { "name": "Cypress", "icon": "/skills/cypress.svg" },
-                    { "name": "React Testing Library", "icon": "/skills/testinglibrary.svg" },
-                    { "name": "GitHub Actions", "icon": "/skills/githubactions.svg" },
-                    { "name": "CI/CD", "icon": "/skills/ci-cd.svg" }
+                    {
+                        "name": "React Hook Form",
+                        "icon": "/skills/reacthookform.svg"
+                    },
+                    {
+                        "name": "Zod",
+                        "icon": "/skills/zod.svg"
+                    },
+                    {
+                        "name": "Conditional workflows",
+                        "icon": null
+                    },
+                    {
+                        "name": "Schema validation",
+                        "icon": null
+                    }
                 ]
             },
             {
                 "id": "05",
-                "category": "UI Libraries",
-                "description": "Libraries used for building user interfaces",
+                "category": "Testing & CI",
+                "description": "Tools for testing and continuous integration",
                 "technologies": [
-                    { "name": "Chakra UI", "icon": "/skills/chakraui.svg" },
-                    { "name": "Radix UI", "icon": "/skills/radixui.svg" },
-                    { "name": "TailwindCSS", "icon": "/skills/tailwindcss.svg" },
-                    { "name": "Storybook", "icon": "/skills/storybook.svg" }
+                    {
+                        "name": "Jest",
+                        "icon": "/skills/jest.svg"
+                    },
+                    {
+                        "name": "Cypress",
+                        "icon": "/skills/cypress.svg"
+                    },
+                    {
+                        "name": "React Testing Library",
+                        "icon": "/skills/testinglibrary.svg"
+                    },
+                    {
+                        "name": "GitHub Actions",
+                        "icon": "/skills/githubactions.svg"
+                    },
+                    {
+                        "name": "CI/CD",
+                        "icon": "/skills/ci-cd.svg"
+                    }
                 ]
             },
             {
                 "id": "06",
+                "category": "UI Libraries",
+                "description": "Libraries used for building user interfaces",
+                "technologies": [
+                    {
+                        "name": "Chakra UI",
+                        "icon": "/skills/chakraui.svg"
+                    },
+                    {
+                        "name": "Radix UI",
+                        "icon": "/skills/radixui.svg"
+                    },
+                    {
+                        "name": "TailwindCSS",
+                        "icon": "/skills/tailwindcss.svg"
+                    },
+                    {
+                        "name": "Storybook",
+                        "icon": "/skills/storybook.svg"
+                    }
+                ]
+            },
+            {
+                "id": "07",
                 "category": "Back-End Technologies",
                 "description": "Technologies used for back-end development",
                 "technologies": [
-                    { "name": "Node.js", "icon": "/skills/nodejs.svg" },
-                    { "name": "Express.js", "icon": "/skills/express.svg" },
-                    { "name": "MongoDB", "icon": "/skills/mongodb.svg" },
-                    { "name": "pm2", "icon": "/skills/pm2.svg" }
+                    {
+                        "name": "Node.js",
+                        "icon": "/skills/nodejs.svg"
+                    },
+                    {
+                        "name": "Express.js",
+                        "icon": "/skills/express.svg"
+                    },
+                    {
+                        "name": "MongoDB",
+                        "icon": "/skills/mongodb.svg"
+                    },
+                    {
+                        "name": "pm2",
+                        "icon": "/skills/pm2.svg"
+                    }
+                ]
+            },
+            {
+                "id": "08",
+                "category": "Engineering & Leadership",
+                "description": "Professional competencies developed through leading projects, collaborating across teams, and delivering high-quality software",
+                "technologies": [
+                    {
+                        "name": "Problem Solving"
+                    },
+                    {
+                        "name": "Communication"
+                    },
+                    {
+                        "name": "Technical Leadership"
+                    },
+                    {
+                        "name": "Ownership & Accountability"
+                    },
+                    {
+                        "name": "Code Review"
+                    },
+                    {
+                        "name": "Mentoring"
+                    },
+                    {
+                        "name": "Cross-Functional Collaboration"
+                    },
+                    {
+                        "name": "Agile / Scrum"
+                    },
+                    {
+                        "name": "Critical Thinking"
+                    },
+                    {
+                        "name": "Continuous Learning"
+                    }
                 ]
             }
         ]
@@ -175,10 +355,10 @@
                 "title": "Senior React Front-End Developer",
                 "company": "Projestic",
                 "description": [
-                    "Engineered core product features with React, TypeScript (strict), Zustand, React Hook Form, Zod, TailwindCSS, and Radix UI, prioritising stability and long-term maintainability.",
-                    "Delivered a dynamic form builder (comparable to Google Forms) with custom fields, e-signatures, Zod schema validation, and conditional branching — materially reducing data-entry errors and manual processing overhead.",
-                    "Integrated Clerk for authentication and RBAC, hardening access-control flows with minimal added complexity.",
-                    "Participated in agile ceremonies, conducted regular code reviews, and collaborated with Design and Back end to scope and ship features on schedule."
+                    "Engineered core product features with React, TypeScript (strict), Zustand, React Hook Form, Zod, TailwindCSS, and Radix UI, reducing data-entry errors through Zod schema validation and conditional branching.",
+                    "Built a dynamic form builder with custom fields, e-signatures, and conditional branching, cutting data-entry errors and manual processing overhead significantly.",
+                    "Integrated Clerk for authentication and RBAC, hardening access-control flows while keeping the codebase maintainable.",
+                    "Participated in agile ceremonies, conducted code reviews, and collaborated with Design and Back-End teams to ship features on schedule."
                 ]
             },
             {
@@ -187,10 +367,10 @@
                 "title": "Lead Front-End Engineer",
                 "company": "Ruliad (Circle)",
                 "description": [
-                    "Led a large-scale codebase refactor — migrating bundle pipeline to Vite, eliminating unused dependencies, and applying strict TypeScript — resulting in noticeably faster builds and improved runtime performance.",
-                    "Scaled the platform to handle a significantly higher concurrent user base by introducing TanStack Query caching, row virtualization, and server-side pagination on the application's most-trafficked views.",
-                    "Designed, built, and governed a 100+ component design system with Chakra UI and Storybook, cutting time-to-feature and establishing consistent UI standards across the engineering team.",
-                    "Owned code review culture, maintained CI quality standards, and mentored junior and mid-level engineers through structured feedback and pair programming."
+                    "Led a large-scale codebase refactor, migrating the bundle pipeline to Vite and applying strict TypeScript, cutting build times and improving runtime performance.",
+                    "Scaled the platform for higher concurrent users by introducing TanStack Query caching, row virtualization, and server-side pagination, improving performance on the most-trafficked views.",
+                    "Built and governed a 100+ component design system with Chakra UI and Storybook, cutting time-to-feature and establishing consistent UI standards across the engineering team.",
+                    "Owned code review culture and CI quality standards, mentoring junior and mid-level engineers through structured feedback and pair programming."
                 ]
             },
             {
@@ -199,10 +379,10 @@
                 "title": "Full-Stack Developer",
                 "company": "Golden Team",
                 "description": [
-                    "Built a delivery photo-verification module that improved order accuracy and supported logistics operations end-to-end.",
-                    "Introduced multi-theme React components with server-side rendering, integrating Airtable and Mailjet and cutting customer-service inquiries noticeably.",
-                    "Delivered a multilingual, responsive interface with role-based access control, boosting user engagement and improving accessibility.",
-                    "Automated operational dashboards and email notifications via CRON jobs, freeing the team from significant manual monitoring effort each week."
+                    "Built a delivery photo-verification module, improving order accuracy and supporting logistics operations end-to-end.",
+                    "Introduced multi-theme React components with SSR, integrating Airtable and Mailjet to cut customer-service inquiries.",
+                    "Delivered a multilingual, responsive interface with RBAC, boosting user engagement and improving accessibility.",
+                    "Automated operational dashboards and email notifications via CRON jobs, eliminating hours of manual monitoring effort each week."
                 ]
             }
         ]
@@ -213,37 +393,47 @@
             {
                 "id": "01",
                 "title": "PsychAssist",
-                "description": "An AI-powered platform that helps psychologists draft clinical assessment reports in their own voice.",
+                "description": "An AI-powered platform that helps psychologists draft clinical assessment reports using their own voice and terminology. Built the React/TypeScript frontend with OpenAI API integration, enabling psychologists to generate assessment reports in minutes rather than hours.",
                 "url": "https://www.psychassist.ai/",
-                "image": "/projects/psychassist.png"
+                "image": "/projects/psychassist.png",
+                "tags": [
+                    "React",
+                    "TypeScript",
+                    "OpenAI API",
+                    "TailwindCSS"
+                ]
             },
             {
                 "id": "02",
                 "title": "Circle.Help",
-                "description": "A social platform connecting people who need help with volunteers ready to give it.",
+                "description": "A social platform connecting people who need help with volunteers ready to give it. Built the real-time matching interface with React, Node.js, MongoDB, and Socket.io, enabling instant coordination between requesters and volunteers.",
                 "url": "https://circle.help/",
-                "image": "/projects/circle-help.png"
+                "image": "/projects/circle-help.png",
+                "tags": []
             },
             {
                 "id": "03",
                 "title": "Circle of Toys",
-                "description": "A donation platform where people send toys directly to children in need.",
+                "description": "A donation platform where people send toys directly to children in need. Built the end-to-end donation flow with React, Node.js, MongoDB, and Stripe, streamlining the process from donor to recipient.",
                 "url": "https://circleoftoys.online/",
-                "image": "/projects/circle-of-toys.png"
+                "image": "/projects/circle-of-toys.png",
+                "tags": []
             },
             {
                 "id": "04",
                 "title": "Podly",
-                "description": "A research tool that helps print-on-demand sellers find trending products and check trademarks.",
+                "description": "A research tool that helps print-on-demand sellers find trending products and check trademarks. Built the data-intensive search and analysis interface with React, TypeScript, Node.js, and GraphQL, enabling sellers to identify profitable products faster.",
                 "url": "https://podly.co/",
-                "image": "/projects/podly.png"
+                "image": "/projects/podly.png",
+                "tags": []
             },
             {
                 "id": "05",
                 "title": "Mengantar",
-                "description": "A shipping platform for Indonesian sellers with COD delivery, tracking, and discounted rates.",
+                "description": "A shipping platform for Indonesian sellers with COD delivery, tracking, and discounted rates. Built the full-stack logistics interface with React, Express.js, MongoDB, and REST API, processing shipments with real-time tracking and cash-on-delivery support.",
                 "url": "https://www.mengantar.com/",
-                "image": "/projects/mengantar.png"
+                "image": "/projects/mengantar.png",
+                "tags": []
             }
         ]
     },
@@ -304,6 +494,14 @@
                 "title": "Design Engineer",
                 "initials": "/recommendations/oleksii-dziubak.jpeg",
                 "profile_link": "https://www.linkedin.com/in/oleksii-dziubak/"
+            },
+            {
+                "id": "yura-aleksenko",
+                "quote": "I had the pleasure of managing Oleksandr as a Frontend Developer on a social network project dedicated to mutual assistance. As a Project Manager, I can confidently say that Oleksandr is a highly competent developer with exceptional self-organization and motivation.\nHe is hardworking, proactive, and consistently brings valuable ideas to the table. Thanks to his suggestions, our project workflows were continuously optimized and improved. Oleksandr didn't just write code; he always found interesting and effective solutions to complex technical challenges.\nI highly recommend Oleksandr to any potential employer - he would be a tremendous asset to any engineering team.",
+                "name": "Yura Aleksenko",
+                "title": "Project Manager | Project Coordinator",
+                "initials": "/recommendations/yura-aleksenko.jpeg",
+                "profile_link": "https://www.linkedin.com/in/aleksenko-yura/"
             }
         ]
     },
