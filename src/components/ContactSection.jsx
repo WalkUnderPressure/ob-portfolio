@@ -16,7 +16,7 @@ export default function ContactSection() {
         bgImage={sectionTitles.contact.bgImage}
       />
 
-      <div className="mx-auto max-w-5xl px-4 pt-12">
+      <div className="mx-auto max-w-5xl px-4 py-12">
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-12">
           <h2
             className="text-h2 col-span-1 md:col-span-4"

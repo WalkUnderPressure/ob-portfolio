@@ -40,11 +40,14 @@ export default function AboutSection() {
             <h3 className="text-h3 mb-3" style={{ color: "var(--accent)" }}>
               Business Impact
             </h3>
-            <div className="space-y-px" style={{ background: "var(--border)" }}>
+            <div
+              className="stagger-animate space-y-px"
+              style={{ background: "var(--border)" }}
+            >
               {personal.aboutBio.impacts.map((impact) => (
                 <div
                   key={impact.title}
-                  className="px-6 py-8 sm:px-8 sm:py-10"
+                  className="stagger-item px-6 py-8 sm:px-8 sm:py-10"
                   style={{ background: "var(--surface)" }}
                 >
                   <h3

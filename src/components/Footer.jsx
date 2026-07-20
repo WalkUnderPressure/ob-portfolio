@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative mt-6 px-6 py-12"
+      className="relative px-6 py-12"
       style={{
         borderTop: "1px solid var(--border)",
         background: "var(--surface)",
