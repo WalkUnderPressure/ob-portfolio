@@ -1,30 +1,39 @@
-import clsx from 'clsx'
+import clsx from "clsx";
 
-export default function SectionTitle({ subheading, heading, sectionId, bgImage }) {
+export default function SectionTitle({
+  subheading,
+  heading,
+  sectionId,
+  bgImage,
+}) {
   return (
-    <div className='px-3'>
+    <div className="px-3">
       <div
         className={clsx(
-          'rounded-3xl',
-          "relative text-white px-6 py-24 sm:py-32",
+          "rounded-3xl",
+          "relative px-6 py-24 text-white sm:py-32",
           "flex flex-col items-center justify-center",
+          "min-h-[40vh] md:min-h-[60vh]"
         )}
-        style={{ minHeight: "60vh" }}
       >
-        <img src={bgImage} alt={heading}
+        <img
+          src={bgImage}
+          alt={heading}
           className={clsx(
-            "w-full h-full object-cover absolute inset-0 z-0 rounded-4xl",
+            "absolute inset-0 z-0 h-full w-full rounded-4xl object-cover"
           )}
-         />
+        />
 
-        <div className={clsx(
-            "w-full h-full absolute inset-0 z-10 bg-neutral-950/80",
-            'rounded-3xl',
+        <div
+          className={clsx(
+            "absolute inset-0 z-10 h-full w-full bg-neutral-950/80",
+            "rounded-3xl"
           )}
         />
 
         <div className="section-header-animate relative z-10 text-center">
-          <h2 className="text-7xl tracking-widest font-black uppercase"
+          <h2
+            className="text-4xl font-black tracking-widest uppercase md:text-7xl"
             style={{ color: "var(--accent)" }}
           >
             {subheading}

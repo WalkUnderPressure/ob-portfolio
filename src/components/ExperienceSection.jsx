@@ -12,11 +12,18 @@ export default function ExperienceSection() {
         bgImage={sectionTitles.experience.bgImage}
       />
       <div className="mx-auto max-w-5xl px-4 pt-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-12 mb-12">
-          <h2 className="col-span-1 text-h2 md:col-span-4" style={{ color: "var(--foreground)" }}>
-            {sectionTitles.experience.heading}<span style={{ color: "var(--accent)" }}>.</span>
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-12">
+          <h2
+            className="text-h2 col-span-1 md:col-span-4"
+            style={{ color: "var(--foreground)" }}
+          >
+            {sectionTitles.experience.heading}
+            <span style={{ color: "var(--accent)" }}>.</span>
           </h2>
-          <p className="col-span-1 md:col-span-8 text-body" style={{ color: "var(--muted-foreground)" }}>
+          <p
+            className="text-body col-span-1 md:col-span-8"
+            style={{ color: "var(--muted-foreground)" }}
+          >
             {experience.description}
           </p>
         </div>
@@ -24,23 +31,42 @@ export default function ExperienceSection() {
           {experience.items.map((exp, index) => (
             <div
               key={exp.id}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 py-10 timeline-animate"
-               style={index > 0 ? { borderTop: "1px solid var(--border)" } : { borderTop: "none" }}
+              className="timeline-animate grid grid-cols-1 gap-6 py-10 md:grid-cols-12"
+              style={
+                index > 0
+                  ? { borderTop: "1px solid var(--border)" }
+                  : { borderTop: "none" }
+              }
             >
-              <div className="md:col-span-4 min-w-0">
-                <div className="text-caption font-mono mb-3" style={{ color: "var(--accent)" }}>
+              <div className="min-w-0 md:col-span-4">
+                <div
+                  className="text-caption mb-3 font-mono"
+                  style={{ color: "var(--accent)" }}
+                >
                   {exp.id} / {exp.period}
                 </div>
-                <h3 className="text-h3 mb-2" style={{ color: "var(--foreground)" }}>
+                <h3
+                  className="text-h3 mb-2"
+                  style={{ color: "var(--foreground)" }}
+                >
                   {exp.title}
                 </h3>
-                <div className="text-body font-semibold" style={{ color: "var(--muted-foreground)" }}>
+                <div
+                  className="text-body font-semibold"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
                   {exp.company}
                 </div>
               </div>
-              <div className="md:col-span-8 min-w-0">
-                <div className="text-body break-words" style={{ color: "var(--muted-foreground)", overflowWrap: "anywhere" }}>
-                  <ul className="list-disc pl-5 space-y-1">
+              <div className="min-w-0 md:col-span-8">
+                <div
+                  className="text-body break-words"
+                  style={{
+                    color: "var(--muted-foreground)",
+                    overflowWrap: "anywhere",
+                  }}
+                >
+                  <ul className="list-disc space-y-1 pl-5">
                     {exp.description.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}

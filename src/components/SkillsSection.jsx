@@ -12,36 +12,72 @@ export default function SkillsSection() {
         bgImage={sectionTitles.skills.bgImage}
       />
       <div className="mx-auto max-w-5xl px-4 pt-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-12 mb-12">
-          <h2 className="col-span-1 text-h2 md:col-span-4" style={{ color: "var(--foreground)" }}>
-            {sectionTitles.skills.heading}<span style={{ color: "var(--accent)" }}>.</span>
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-12">
+          <h2
+            className="text-h2 col-span-1 md:col-span-4"
+            style={{ color: "var(--foreground)" }}
+          >
+            {sectionTitles.skills.heading}
+            <span style={{ color: "var(--accent)" }}>.</span>
           </h2>
-          <p className="col-span-1 md:col-span-8 text-body" style={{ color: "var(--muted-foreground)" }}>
+          <p
+            className="text-body col-span-1 md:col-span-8"
+            style={{ color: "var(--muted-foreground)" }}
+          >
             {skills.description}
           </p>
         </div>
-        <div className="space-y-px stagger-animate" style={{ background: "var(--border)" }}>
+        <div
+          className="stagger-animate space-y-px"
+          style={{ background: "var(--border)" }}
+        >
           {skills.items.map((skill) => (
-            <div key={skill.id} className="px-6 py-8 sm:px-8 sm:py-10 stagger-item" style={{ background: "var(--surface)" }}>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-                <div className="md:col-span-4 flex items-center gap-3 min-w-0">
-                  <div className="text-caption font-mono flex-shrink-0" style={{ color: "var(--accent)" }}>{skill.id}</div>
-                  <h3 className="text-h3 break-words min-w-0" style={{ color: "var(--foreground)", overflowWrap: "anywhere" }}>
+            <div
+              key={skill.id}
+              className="stagger-item px-6 py-8 sm:px-8 sm:py-10"
+              style={{ background: "var(--surface)" }}
+            >
+              <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-12">
+                <div className="flex min-w-0 items-center gap-3 md:col-span-4">
+                  <div
+                    className="text-caption flex-shrink-0 font-mono"
+                    style={{ color: "var(--accent)" }}
+                  >
+                    {skill.id}
+                  </div>
+                  <h3
+                    className="text-h3 min-w-0 break-words"
+                    style={{
+                      color: "var(--foreground)",
+                      overflowWrap: "anywhere",
+                    }}
+                  >
                     {skill.category}
                   </h3>
                 </div>
-                <div className="md:col-span-8 min-w-0">
-                  <p className="text-body mb-4" style={{ color: "var(--muted-foreground)" }}>{skill.description}</p>
+                <div className="min-w-0 md:col-span-8">
+                  <p
+                    className="text-body mb-4"
+                    style={{ color: "var(--muted-foreground)" }}
+                  >
+                    {skill.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 sm:gap-2.5">
                     {skill.technologies.map((tech) => (
-                      <span key={tech.name}
-                        className="inline-flex items-center gap-1.5 text-body px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full font-semibold"
-                        style={{ background: "var(--surface-alt)", border: "1px solid var(--border)", color: "var(--foreground)" }}>
+                      <span
+                        key={tech.name}
+                        className="text-body inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-semibold sm:px-3 sm:py-1.5"
+                        style={{
+                          background: "var(--surface-alt)",
+                          border: "1px solid var(--border)",
+                          color: "var(--foreground)",
+                        }}
+                      >
                         {tech.icon && (
                           <img
                             src={tech.icon}
                             alt={tech.name}
-                            className="w-4 h-4 sm:w-5 sm:h-5"
+                            className="h-4 w-4 sm:h-5 sm:w-5"
                             loading="lazy"
                           />
                         )}
