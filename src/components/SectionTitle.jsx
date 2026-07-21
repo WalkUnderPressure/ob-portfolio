@@ -13,7 +13,7 @@ export default function SectionTitle({
           "rounded-3xl",
           "relative px-6 py-24 text-white sm:py-32",
           "flex flex-col items-center justify-center",
-          "min-h-[40vh] md:min-h-[60vh]"
+          "min-h-[25vh] md:min-h-[60vh]"
         )}
       >
         <img

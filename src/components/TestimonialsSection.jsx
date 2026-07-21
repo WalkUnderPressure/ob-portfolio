@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SectionTitle from "./SectionTitle.jsx";
 import data from "../data/portfolio.json";
 import ArrowUpRight from "./icons/ArrowUpRight.jsx";
@@ -8,17 +8,18 @@ export default function TestimonialsSection() {
   const { testimonials, sectionTitles } = data;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [touchStartPos, setTouchStartPos] = useState(null);
+
+  // Use a ref instead of state to avoid unnecessary re-renders while dragging
+  const dragStartPos = useRef(null);
 
   const length = testimonials.items.length;
 
-  // Handle responsive check for 3D card layout adjustments
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Check on initial mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -35,22 +36,19 @@ export default function TestimonialsSection() {
     setCurrentIndex(index);
   };
 
-  // Touch event handlers for mobile swiping
-  const handleTouchStart = (e) => {
-    setTouchStartPos({
-      x: e.targetTouches[0].clientX,
-      y: e.targetTouches[0].clientY,
-    });
+  // Unified Drag Handlers for both Mouse and Touch
+  const handleDragStart = (e, clientX, clientY) => {
+    // If the user is clicking a link or button, ignore the drag
+    if (e.target.closest(".no-drag")) return;
+
+    dragStartPos.current = { x: clientX, y: clientY };
   };
 
-  const handleTouchEnd = (e) => {
-    if (!touchStartPos) return;
+  const handleDragEnd = (clientX, clientY) => {
+    if (!dragStartPos.current) return;
 
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-
-    const deltaX = touchStartPos.x - touchEndX;
-    const deltaY = touchStartPos.y - touchEndY;
+    const deltaX = dragStartPos.current.x - clientX;
+    const deltaY = dragStartPos.current.y - clientY;
 
     // Check if it's a horizontal swipe (distance > 50px and mostly horizontal)
     if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
@@ -60,10 +58,10 @@ export default function TestimonialsSection() {
         goToPrevious(); // Swiped right
       }
     }
-    setTouchStartPos(null);
+
+    dragStartPos.current = null;
   };
 
-  // Calculate the shortest distance in a circular array to achieve the infinite 3D wrapping effect
   const getOffset = (index) => {
     let offset = index - currentIndex;
     if (offset > Math.floor(length / 2)) offset -= length;
@@ -80,7 +78,6 @@ export default function TestimonialsSection() {
       />
 
       <div className="mx-auto max-w-6xl px-4 pt-12">
-        {/* Header Section */}
         <div className="mb-4 grid grid-cols-1 gap-2 md:mb-16 md:grid-cols-12 md:gap-6 md:gap-8">
           <h2
             className="text-h2 col-span-1 md:col-span-4"
@@ -98,18 +95,38 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* 3D Carousel Viewport */}
+        {/* Viewport with Mouse and Touch Events */}
         <div
-          className="relative mx-auto flex h-[580px] w-full max-w-3xl items-center justify-center sm:h-[550px] md:h-[480px]"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+          className={clsx(
+            "relative mx-auto flex h-[580px] w-full max-w-3xl",
+            "cursor-grab items-center justify-center",
+            "active:cursor-grabbing sm:h-[550px] md:h-[480px]"
+          )}
+
+          onTouchStart={(e) =>
+            handleDragStart(
+              e,
+              e.targetTouches[0].clientX,
+              e.targetTouches[0].clientY
+            )
+          }
+          onTouchEnd={(e) =>
+            handleDragEnd(
+              e.changedTouches[0].clientX,
+              e.changedTouches[0].clientY
+            )
+          }
+          onMouseDown={(e) => handleDragStart(e, e.clientX, e.clientY)}
+          onMouseUp={(e) => handleDragEnd(e.clientX, e.clientY)}
+          onMouseLeave={(e) => {
+            if (dragStartPos.current) handleDragEnd(e.clientX, e.clientY);
+          }}
         >
           {testimonials.items.map((testimonial, index) => {
             const offset = getOffset(index);
             const absOffset = Math.abs(offset);
             const isActive = offset === 0;
 
-            // Shift cards wider on mobile so they don't block the main card's text
             const translationPercentage = isMobile ? 95 : 65;
             const scaleAmount = isMobile ? 0.08 : 0.15;
 
@@ -118,10 +135,15 @@ export default function TestimonialsSection() {
                 key={testimonial.id}
                 className={clsx(
                   "absolute flex flex-col overflow-hidden rounded-2xl p-6 sm:p-10",
-                  "h-[550px] w-full max-w-xl transition-all duration-700 ease-in-out sm:h-[500px] md:h-[450px]"
+                  "h-[550px] w-full max-w-xl",
+                  "transition-all duration-700 ease-in-out",
+                  "sm:h-[500px] md:h-[450px]"
                 )}
+
                 style={{
-                  border: "1px dashed var(--border)",
+                  border: isActive
+                    ? "1px dashed var(--accent)"
+                    : "2px dashed var(--border)",
                   background: "var(--surface)",
                   transform: `translateX(${offset * translationPercentage}%) scale(${1 - absOffset * scaleAmount})`,
                   zIndex: 40 - absOffset,
@@ -149,10 +171,7 @@ export default function TestimonialsSection() {
                     ))}
                   </blockquote>
 
-                  <figcaption
-                    className="flex items-center gap-3 pt-5 sm:pt-6"
-                    style={{ borderTop: "1px solid var(--border)" }}
-                  >
+                  <figcaption className="flex items-center gap-3 pt-5 sm:pt-6">
                     <div
                       className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full text-sm font-black sm:h-11 sm:w-11"
                       style={{
@@ -170,24 +189,27 @@ export default function TestimonialsSection() {
                     </div>
 
                     <div className="min-w-0 flex-1">
-                      <a
-                        href={testimonial.profile_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${testimonial.name} ${testimonial.title}`}
-                        className="group flex items-center gap-2"
-                      >
-                        <div
-                          className="text-h3 truncate text-base group-hover:underline sm:text-lg"
-                          style={{ color: "var(--foreground)" }}
+                      <div className="h-fit w-fit">
+                        <a
+                          href={testimonial.profile_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${testimonial.name} ${testimonial.title}`}
+                          // Added "no-drag" so clicking here won't trigger the swipe
+                          className="no-drag group flex w-fit cursor-pointer items-center gap-2"
                         >
-                          {testimonial.name}
-                        </div>
-                        <ArrowUpRight
-                          className="h-3 w-3 sm:h-4 sm:w-4"
-                          style={{ color: "var(--accent)" }}
-                        />
-                      </a>
+                          <div
+                            className="text-h3 truncate text-base group-hover:underline sm:text-lg"
+                            style={{ color: "var(--foreground)" }}
+                          >
+                            {testimonial.name}
+                          </div>
+                          <ArrowUpRight
+                            className="h-3 w-3 sm:h-4 sm:w-4"
+                            style={{ color: "var(--accent)" }}
+                          />
+                        </a>
+                      </div>
 
                       <div
                         className="text-caption truncate text-xs sm:text-sm"
@@ -203,7 +225,7 @@ export default function TestimonialsSection() {
           })}
         </div>
 
-        {/* Navigation Controls - Identical across devices */}
+        {/* Navigation Controls */}
         <div className="mt-4 flex flex-col items-center justify-center gap-4 md:mt-12">
           <div className="flex items-center justify-center gap-6">
             <button
