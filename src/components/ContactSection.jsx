@@ -33,70 +33,78 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="space-y-6">
-          {/* Secondary Contact Info */}
-          <div
-            className="text-body flex flex-wrap gap-6"
-            style={{ color: "var(--muted-foreground)" }}
-          >
-            <div className="flex items-center justify-center gap-2">
-              <MailSmallIcon />
-              <a
-                href={`mailto:${personal.email}`}
-                className={clsx(
-                  "text-[var(--foreground)] hover:underline",
-                  "flex items-center justify-center"
-                )}
-              >
-                {personal.email}
-              </a>
-
-              <CopyButton
-                textToCopy={personal.email}
-                ariaLabel="Copy email to clipboard"
-                title="Copy email"
-              />
-            </div>
-
-            <div className="flex items-center gap-2">
-              <PhoneSmallIcon />
-
-              <a
-                href={`tel:${personal.phone}`}
-                className={clsx(
-                  "text-[var(--foreground)] hover:underline",
-                  "flex items-center justify-center"
-                )}
-                style={{ color: "var(--foreground)" }}
-              >
-                {personal.phone}
-              </a>
-
-              <CopyButton
-                textToCopy={personal.phone}
-                ariaLabel="Copy phone to clipboard"
-                title="Copy phone"
-              />
-            </div>
-
-            <div className="flex items-center gap-2">
-              <MapSmallIcon />
-              <span style={{ color: "var(--foreground)" }}>
-                {personal.location}
-              </span>
-            </div>
-
+        {/* Secondary Contact Info */}
+        <div
+          className={clsx(
+            "text-body flex flex-wrap gap-6 md:flex-nowrap",
+            "items-center"
+          )}
+          style={{ color: "var(--muted-foreground)" }}
+        >
+          <div className="flex h-fit items-center justify-center gap-2">
+            <MailSmallIcon />
             <a
               href={`mailto:${personal.email}`}
-              className="text-h3 cursor-pointer rounded-lg px-8 py-4 font-medium transition-all duration-200 hover:scale-110"
-              style={{
-                backgroundColor: "var(--accent)",
-                color: "var(--background)",
-              }}
+              className={clsx(
+                "whitespace-nowrap text-[var(--foreground)] hover:underline",
+                "flex items-center justify-center"
+              )}
             >
-              Send me a message
+              {personal.email}
             </a>
+
+            <CopyButton
+              textToCopy={personal.email}
+              ariaLabel="Copy email to clipboard"
+              title="Copy email"
+            />
           </div>
+
+          <div className="flex h-fit items-center justify-center gap-2">
+            <PhoneSmallIcon />
+
+            <a
+              href={`tel:${personal.phone}`}
+              className={clsx(
+                "whitespace-nowrap text-[var(--foreground)] hover:underline",
+                "flex items-center justify-center"
+              )}
+              style={{ color: "var(--foreground)" }}
+            >
+              {personal.phone}
+            </a>
+
+            <CopyButton
+              textToCopy={personal.phone}
+              ariaLabel="Copy phone to clipboard"
+              title="Copy phone"
+            />
+          </div>
+
+          <div className="flex h-fit items-center justify-center gap-2">
+            <MapSmallIcon />
+            <span
+              className="whitespace-nowrap"
+              style={{ color: "var(--foreground)" }}
+            >
+              {personal.location}
+            </span>
+          </div>
+
+          <a
+            href={`mailto:${personal.email}`}
+            className={clsx(
+              "cursor-pointer rounded-lg px-6 py-4 text-2xl font-black",
+              "transition-all duration-200 hover:scale-110",
+              "whitespace-nowrap"
+            )}
+            style={{
+              backgroundColor: "var(--accent)",
+              color: "var(--background)",
+            }}
+          >
+            Send me a message
+          </a>
         </div>
       </div>
     </section>

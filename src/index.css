@@ -188,10 +188,10 @@ button:focus-visible,
 }
 
 /* Ensure minimum tap target size on mobile */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   a,
   button {
     min-width: 44px;
     min-height: 44px;
   }
-}
+} */

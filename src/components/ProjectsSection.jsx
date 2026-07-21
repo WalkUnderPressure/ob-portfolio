@@ -30,7 +30,7 @@ export default function ProjectsSection() {
             {projects.description}
           </p>
         </div>
-        <div className="stagger-animate space-y-20 sm:space-y-28">
+        <div className="stagger-animate flex flex-col space-y-8 sm:space-y-16">
           {projects.items.map((project) => (
             <a
               key={project.id}

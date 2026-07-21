@@ -396,7 +396,7 @@
         "description": "An AI-powered platform that helps psychologists draft clinical assessment reports using their own voice and terminology. Built the React/TypeScript frontend with OpenAI API integration, enabling psychologists to generate assessment reports in minutes rather than hours.",
         "url": "https://www.psychassist.ai/",
         "image": "/projects/psychassist.png",
-        "tags": ["React", "TypeScript", "OpenAI API", "TailwindCSS"]
+        "tags": []
       },
       {
         "id": "02",

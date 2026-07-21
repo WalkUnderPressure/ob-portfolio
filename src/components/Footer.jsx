@@ -14,7 +14,7 @@ export default function Footer() {
       }}
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
-        <div className="flex flex-col items-center gap-1 sm:items-start">
+        <div className="flex flex-col items-start gap-1">
           <div
             className="text-h3 tracking-tight uppercase"
             style={{ color: "var(--foreground)" }}
