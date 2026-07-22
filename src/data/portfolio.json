@@ -129,7 +129,7 @@
     "description": "A toolkit honed through real-world projects. Every category below represents tools I reach for daily.",
     "items": [
       {
-        "id": "01",
+        "id": "ai_development",
         "category": "AI Development",
         "description": "Leveraging AI tools to accelerate software development, improve code quality, and enhance engineering productivity",
         "technologies": [
@@ -154,161 +154,7 @@
         ]
       },
       {
-        "id": "02",
-        "category": "Languages & Frameworks",
-        "description": "Core technologies used for front-end development",
-        "technologies": [
-          {
-            "name": "React 16.8+",
-            "icon": "/skills/react.svg"
-          },
-          {
-            "name": "TypeScript (strict)",
-            "icon": "/skills/typescript.svg"
-          },
-          {
-            "name": "Next.js",
-            "icon": "/skills/nextdotjs.svg"
-          },
-          {
-            "name": "Vite",
-            "icon": "/skills/vite.svg"
-          },
-          {
-            "name": "Webpack 5",
-            "icon": "/skills/webpack.svg"
-          }
-        ]
-      },
-      {
-        "id": "03",
-        "category": "State Management",
-        "description": "Tools for managing application state",
-        "technologies": [
-          {
-            "name": "TanStack Query",
-            "icon": "/skills/tanstackquery.svg"
-          },
-          {
-            "name": "REST",
-            "icon": "/skills/rest-api.svg"
-          },
-          {
-            "name": "GraphQL",
-            "icon": "/skills/graphql.svg"
-          },
-          {
-            "name": "Zustand",
-            "icon": "/skills/zustand.svg"
-          },
-          {
-            "name": "Redux",
-            "icon": "/skills/redux.svg"
-          },
-          {
-            "name": "MobX",
-            "icon": "/skills/mobx.svg"
-          }
-        ]
-      },
-      {
-        "id": "04",
-        "category": "Forms & Validation",
-        "description": "Libraries and tools for form handling and validation",
-        "technologies": [
-          {
-            "name": "React Hook Form",
-            "icon": "/skills/reacthookform.svg"
-          },
-          {
-            "name": "Zod",
-            "icon": "/skills/zod.svg"
-          },
-          {
-            "name": "Conditional workflows",
-            "icon": null
-          },
-          {
-            "name": "Schema validation",
-            "icon": null
-          }
-        ]
-      },
-      {
-        "id": "05",
-        "category": "Testing & CI",
-        "description": "Tools for testing and continuous integration",
-        "technologies": [
-          {
-            "name": "Jest",
-            "icon": "/skills/jest.svg"
-          },
-          {
-            "name": "Cypress",
-            "icon": "/skills/cypress.svg"
-          },
-          {
-            "name": "React Testing Library",
-            "icon": "/skills/testinglibrary.svg"
-          },
-          {
-            "name": "GitHub Actions",
-            "icon": "/skills/githubactions.svg"
-          },
-          {
-            "name": "CI/CD",
-            "icon": "/skills/ci-cd.svg"
-          }
-        ]
-      },
-      {
-        "id": "06",
-        "category": "UI Libraries",
-        "description": "Libraries used for building user interfaces",
-        "technologies": [
-          {
-            "name": "Chakra UI",
-            "icon": "/skills/chakraui.svg"
-          },
-          {
-            "name": "Radix UI",
-            "icon": "/skills/radixui.svg"
-          },
-          {
-            "name": "TailwindCSS",
-            "icon": "/skills/tailwindcss.svg"
-          },
-          {
-            "name": "Storybook",
-            "icon": "/skills/storybook.svg"
-          }
-        ]
-      },
-      {
-        "id": "07",
-        "category": "Back-End Technologies",
-        "description": "Technologies used for back-end development",
-        "technologies": [
-          {
-            "name": "Node.js",
-            "icon": "/skills/nodejs.svg"
-          },
-          {
-            "name": "Express.js",
-            "icon": "/skills/express.svg"
-          },
-          {
-            "name": "MongoDB",
-            "icon": "/skills/mongodb.svg"
-          },
-          {
-            "name": "pm2",
-            "icon": "/skills/pm2.svg"
-          }
-        ]
-      },
-      {
-        "id": "08",
+        "id": "engineering_leadership",
         "category": "Engineering & Leadership",
         "description": "Professional competencies developed through leading projects, collaborating across teams, and delivering high-quality software",
         "technologies": [
@@ -341,6 +187,160 @@
           },
           {
             "name": "Continuous Learning"
+          }
+        ]
+      },
+      {
+        "id": "languages_frameworks",
+        "category": "Languages & Frameworks",
+        "description": "Core technologies used for front-end development",
+        "technologies": [
+          {
+            "name": "React 16.8+",
+            "icon": "/skills/react.svg"
+          },
+          {
+            "name": "TypeScript (strict)",
+            "icon": "/skills/typescript.svg"
+          },
+          {
+            "name": "Next.js",
+            "icon": "/skills/nextdotjs.svg"
+          },
+          {
+            "name": "Vite",
+            "icon": "/skills/vite.svg"
+          },
+          {
+            "name": "Webpack 5",
+            "icon": "/skills/webpack.svg"
+          }
+        ]
+      },
+      {
+        "id": "state_management",
+        "category": "State Management",
+        "description": "Tools for managing application state",
+        "technologies": [
+          {
+            "name": "TanStack Query",
+            "icon": "/skills/tanstackquery.svg"
+          },
+          {
+            "name": "REST",
+            "icon": "/skills/rest-api.svg"
+          },
+          {
+            "name": "GraphQL",
+            "icon": "/skills/graphql.svg"
+          },
+          {
+            "name": "Zustand",
+            "icon": "/skills/zustand.svg"
+          },
+          {
+            "name": "Redux",
+            "icon": "/skills/redux.svg"
+          },
+          {
+            "name": "MobX",
+            "icon": "/skills/mobx.svg"
+          }
+        ]
+      },
+      {
+        "id": "forms_validation",
+        "category": "Forms & Validation",
+        "description": "Libraries and tools for form handling and validation",
+        "technologies": [
+          {
+            "name": "React Hook Form",
+            "icon": "/skills/reacthookform.svg"
+          },
+          {
+            "name": "Zod",
+            "icon": "/skills/zod.svg"
+          },
+          {
+            "name": "Conditional workflows",
+            "icon": null
+          },
+          {
+            "name": "Schema validation",
+            "icon": null
+          }
+        ]
+      },
+      {
+        "id": "testing_ci",
+        "category": "Testing & CI",
+        "description": "Tools for testing and continuous integration",
+        "technologies": [
+          {
+            "name": "Jest",
+            "icon": "/skills/jest.svg"
+          },
+          {
+            "name": "Cypress",
+            "icon": "/skills/cypress.svg"
+          },
+          {
+            "name": "React Testing Library",
+            "icon": "/skills/testinglibrary.svg"
+          },
+          {
+            "name": "GitHub Actions",
+            "icon": "/skills/githubactions.svg"
+          },
+          {
+            "name": "CI/CD",
+            "icon": "/skills/ci-cd.svg"
+          }
+        ]
+      },
+      {
+        "id": "ui_libraries",
+        "category": "UI Libraries",
+        "description": "Libraries used for building user interfaces",
+        "technologies": [
+          {
+            "name": "Chakra UI",
+            "icon": "/skills/chakraui.svg"
+          },
+          {
+            "name": "Radix UI",
+            "icon": "/skills/radixui.svg"
+          },
+          {
+            "name": "TailwindCSS",
+            "icon": "/skills/tailwindcss.svg"
+          },
+          {
+            "name": "Storybook",
+            "icon": "/skills/storybook.svg"
+          }
+        ]
+      },
+      {
+        "id": "back-end_technologies",
+        "category": "Back-End Technologies",
+        "description": "Technologies used for back-end development",
+        "technologies": [
+          {
+            "name": "Node.js",
+            "icon": "/skills/nodejs.svg"
+          },
+          {
+            "name": "Express.js",
+            "icon": "/skills/express.svg"
+          },
+          {
+            "name": "MongoDB",
+            "icon": "/skills/mongodb.svg"
+          },
+          {
+            "name": "pm2",
+            "icon": "/skills/pm2.svg"
           }
         ]
       }

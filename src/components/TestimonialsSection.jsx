@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
               <div
                 key={testimonial.id}
                 className={clsx(
-                  "absolute flex flex-col overflow-hidden rounded-2xl p-6 sm:p-10",
+                  "absolute flex flex-col overflow-hidden rounded-2xl p-4 sm:p-8",
                   "h-[550px] w-full max-w-xl",
                   "transition-all duration-700 ease-in-out",
                   "sm:h-[500px] md:h-[450px]"
@@ -161,7 +161,10 @@ export default function TestimonialsSection() {
                   </span>
 
                   <blockquote
-                    className="text-body mb-6 flex-1 flex-grow overflow-y-auto"
+                    className={clsx(
+                      "text-body flex-1 flex-grow pr-2",
+                      "overflow-y-auto"
+                    )}
                     style={{ color: "var(--foreground)" }}
                   >
                     {testimonial.quote.split("\n").map((paragraph, i) => (
