@@ -10,9 +10,9 @@
     "heroDescription": "Senior Front-End Developer with 6+ years delivering production React and TypeScript applications across distributed product teams. Experienced with AI-assisted development tools. Focused on performance and scalable architecture.",
     "profileImage": "/avatar/linked-in-avatar.jpg",
     "heroBackgrounds": [
-      "/hero-bg/left.avif",
-      "/hero-bg/middle.avif",
-      "/hero-bg/right.avif"
+      "/hero-bg/left.jpg",
+      "/hero-bg/middle.jpg",
+      "/hero-bg/right.jpg"
     ],
     "aboutBio": {
       "text": "I build web applications that solve real business problems—not just polished interfaces. My focus is creating products that reduce operational costs, improve user experience, and help companies scale through thoughtful engineering, maintainable architecture, and measurable business outcomes.",

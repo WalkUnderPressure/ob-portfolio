@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview",
+    "start": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,json,css,html}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,json,css,html}\""
   },
