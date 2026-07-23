@@ -1,10 +1,9 @@
 @font-face {
   font-family: "JetBrainsMono";
-  src: url("/fonts/jet_brains_mono/JetBrainsMono.ttf") format("truetype");
+  src: url("/fonts/jet_brains_mono/JetBrainsMono.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
-  /* font-display: swap; */
-  font-display: block;
+  font-display: swap;
 }
 
 @import "tailwindcss";

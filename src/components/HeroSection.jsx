@@ -10,7 +10,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
-      style={{ background: "var(--background)" }}
+      style={{ background: "rgba(0,0,0,0.7)" }}
     >
       <div className="absolute inset-0 grid grid-cols-1 gap-1 opacity-20 md:grid-cols-3">
         {personal.heroBackgrounds.map((bg, i) => (
@@ -26,13 +26,6 @@ export default function HeroSection() {
         ))}
       </div>
 
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(rgba(var(--background) 0.4) 0%, rgba(var(--background) 0.7) 60%, rgba(var(--background) 0.95) 100%)",
-        }}
-      />
       <div
         className="relative z-10 mx-auto max-w-5xl px-6 pt-28 pb-16 text-center sm:px-8 sm:pt-32"
         style={{ color: "var(--foreground)" }}
@@ -72,7 +65,7 @@ export default function HeroSection() {
         >
           {personal.title}
         </h2>
-        {/* <p className="text-body max-w-2xl mx-auto mb-12" style={{ color: "rgba(245, 245, 240, 0.6)" }}> */}
+
         <p
           className="text-body mx-auto mb-6 max-w-2xl md:mb-12"
           style={{ color: "rgba(245, 245, 240, 0.85)" }}
@@ -113,10 +106,7 @@ export default function HeroSection() {
           className="group flex flex-col items-center gap-3 text-[var(--accent)]"
           aria-label="Scroll to explore"
         >
-          <span className="text-caption opacity-80">
-            {/* style={{ color: "rgba(245, 245, 240, 0.5)" }} */}
-            Scroll to explore
-          </span>
+          <span className="text-caption opacity-80">Scroll to explore</span>
           <ArrowDown className="animate-bounce transition-transform group-hover:translate-y-1" />
         </a>
       </div>
