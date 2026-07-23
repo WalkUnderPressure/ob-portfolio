@@ -1,78 +1,67 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
-export function initScrollAnimations() {
+// Shared fade-in + translateY variant for section headers
+export const fadeInUp = {
+  initial: { opacity: 0, y: 12 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-20% 0px" },
+  transition: { duration: 0.75, delay: 0.2, ease: "easeOut" },
+};
+
+// Stagger container variant — children use .staggerItem
+export const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: prefersReducedMotion ? 0 : 0.08,
+    },
+  },
+  viewport: { once: true, margin: "-20% 0px" },
+};
+
+export const staggerItem = {
+  initial: { opacity: 0, y: 12 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: "easeOut" },
+};
+
+export const getProjectItem = (index) => ({
+  viewport: {
+    once: true,
+    amount: 0.2,
+  },
+  initial: {
+    rotate: index % 2 ? 2 : -2,
+    y: 30,
+    x: index % 2 ? 80 : -80,
+  },
+  whileInView: {
+    rotate: 0,
+    y: 0,
+    x: 0,
+  },
+  transition: {
+    duration: 0.4,
+  },
+});
+
+// Timeline slide-in from left
+export const timelineItem = {
+  initial: { opacity: 0, x: -16 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, margin: "-20% 0px" },
+  transition: { duration: 0.5, ease: "easeOut" },
+};
+
+/**
+ * Wraps any animation config and disables it when prefers-reduced-motion is active.
+ * Usage: spread the returned object onto a motion element.
+ */
+export function withReducedMotion(config) {
   if (prefersReducedMotion) {
-    return;
+    return {};
   }
-
-  // Section headers: fade in + translateY from 12px to 0
-  const sectionHeaders = document.querySelectorAll(".section-header-animate");
-
-  sectionHeaders.forEach((header) => {
-    gsap.fromTo(
-      header,
-      { opacity: 0, y: 12 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.75,
-        delay: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: header,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-  });
-
-  // Stagger fade-in for skill rows and project cards
-  const staggerItems = document.querySelectorAll(".stagger-animate");
-  staggerItems.forEach((container) => {
-    const items = container.querySelectorAll(".stagger-item");
-    gsap.fromTo(
-      items,
-      { opacity: 0, y: 12 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.08,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: container,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-  });
-
-  // Timeline items: left-to-right slide
-  const timelineItems = document.querySelectorAll(".timeline-animate");
-  timelineItems.forEach((item) => {
-    gsap.fromTo(
-      item,
-      { opacity: 0, x: -16 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-  });
+  return config;
 }

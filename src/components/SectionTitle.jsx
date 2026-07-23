@@ -1,4 +1,6 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
+import { fadeInUp } from "../utils/animations.js";
 
 export default function SectionTitle({ subheading, heading, bgImage }) {
   return (
@@ -26,14 +28,14 @@ export default function SectionTitle({ subheading, heading, bgImage }) {
           )}
         />
 
-        <div className="section-header-animate relative z-10 text-center">
+        <motion.div className="relative z-10 text-center" {...fadeInUp}>
           <h2
             className="text-4xl font-black tracking-widest uppercase md:text-7xl"
             style={{ color: "var(--accent)" }}
           >
             {subheading}
           </h2>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

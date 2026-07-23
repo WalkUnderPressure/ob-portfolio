@@ -1,54 +1,14 @@
-import { useState, useRef } from "react";
-import { gsap } from "gsap";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "./SectionTitle.jsx";
 import data from "../data/portfolio.json";
+import { staggerContainer, staggerItem } from "../utils/animations.js";
 
 export default function SkillsSection() {
   const { skills, sectionTitles } = data;
   const [openItems, setOpenItems] = useState({});
-  const contentRefs = useRef({});
-  const arrowRefs = useRef({});
 
   const toggleItem = (id) => {
-    const isOpen = openItems[id];
-
-    // Animate arrow rotation
-    if (arrowRefs.current[id]) {
-      gsap.to(arrowRefs.current[id], {
-        rotation: isOpen ? 0 : 180,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    }
-
-    // Animate content
-    if (contentRefs.current[id]) {
-      const element = contentRefs.current[id];
-
-      if (isOpen) {
-        // Closing animation
-        gsap.to(element, {
-          height: 0,
-          opacity: 0,
-          duration: 0.4,
-          ease: "power2.inOut",
-        });
-      } else {
-        // Opening animation - measure natural height
-        gsap.set(element, { height: "auto", opacity: 1 });
-        const targetHeight = element.offsetHeight;
-
-        // Reset and animate
-        gsap.set(element, { height: 0, opacity: 0 });
-        gsap.to(element, {
-          height: targetHeight,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.inOut",
-        });
-      }
-    }
-
     setOpenItems((prev) => ({
       ...prev,
       [id]: !prev[id],
@@ -79,18 +39,20 @@ export default function SkillsSection() {
           </p>
         </div>
 
-        <div
-          className="stagger-animate space-y-px"
+        <motion.div
+          className="space-y-px"
           style={{ background: "var(--border)" }}
+          {...staggerContainer}
         >
           {skills.items.map((skill, index) => {
             const isOpen = openItems[skill.id];
 
             return (
-              <div
+              <motion.div
                 key={skill.id}
-                className="stagger-item p-4 md:p-6"
+                className="p-4 md:p-6"
                 style={{ background: "var(--surface)" }}
+                {...staggerItem}
               >
                 <button
                   onClick={() => toggleItem(skill.id)}
@@ -120,9 +82,8 @@ export default function SkillsSection() {
                   </div>
 
                   <div className="ml-auto flex min-w-0 items-center justify-end">
-                    <svg
-                      ref={(el) => (arrowRefs.current[skill.id] = el)}
-                      className="h-5 w-5 flex-shrink-0 transition-transform"
+                    <motion.svg
+                      className="h-5 w-5 flex-shrink-0"
                       style={{ color: "var(--accent)" }}
                       viewBox="0 0 24 24"
                       fill="none"
@@ -130,54 +91,63 @@ export default function SkillsSection() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                     >
                       <polyline points="6,9 12,15 18,9"></polyline>
-                    </svg>
+                    </motion.svg>
                   </div>
                 </button>
 
-                {/* Full-width accordion content */}
-                <div
-                  ref={(el) => (contentRefs.current[skill.id] = el)}
-                  id={`skills-content-${skill.id}`}
-                  className="h-0 overflow-hidden opacity-0"
-                >
-                  <div className="w-full pt-6">
-                    <p
-                      className="text-body mb-4"
-                      style={{ color: "var(--muted-foreground)" }}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key={`content-${skill.id}`}
+                      id={`skills-content-${skill.id}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="overflow-hidden"
                     >
-                      {skill.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 sm:gap-2.5">
-                      {skill.technologies.map((tech) => (
-                        <span
-                          key={tech.name}
-                          className="text-body inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-semibold sm:px-3 sm:py-1.5"
-                          style={{
-                            background: "var(--surface-alt)",
-                            border: "1px solid var(--border)",
-                            color: "var(--foreground)",
-                          }}
+                      <div className="w-full pt-6">
+                        <p
+                          className="text-body mb-4"
+                          style={{ color: "var(--muted-foreground)" }}
                         >
-                          {tech.icon && (
-                            <img
-                              src={tech.icon}
-                              alt={tech.name}
-                              className="h-4 w-4 sm:h-5 sm:w-5"
-                              loading="lazy"
-                            />
-                          )}
-                          {tech.name}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+                          {skill.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 sm:gap-2.5">
+                          {skill.technologies.map((tech) => (
+                            <span
+                              key={tech.name}
+                              className="text-body inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-semibold sm:px-3 sm:py-1.5"
+                              style={{
+                                background: "var(--surface-alt)",
+                                border: "1px solid var(--border)",
+                                color: "var(--foreground)",
+                              }}
+                            >
+                              {tech.icon && (
+                                <img
+                                  src={tech.icon}
+                                  alt={tech.name}
+                                  className="h-4 w-4 sm:h-5 sm:w-5"
+                                  loading="lazy"
+                                />
+                              )}
+                              {tech.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -4,6 +4,15 @@ import data from "../data/portfolio.json";
 import ArrowUpRight from "./icons/ArrowUpRight.jsx";
 import clsx from "clsx";
 
+const getOffset = (index, currentIndex, itemsCount) => {
+  let offset = index - currentIndex;
+
+  if (offset > Math.floor(itemsCount / 2)) offset -= itemsCount;
+  if (offset < -Math.floor(itemsCount / 2)) offset += itemsCount;
+
+  return offset;
+};
+
 export default function TestimonialsSection() {
   const { testimonials, sectionTitles } = data;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,7 +21,7 @@ export default function TestimonialsSection() {
   // Use a ref instead of state to avoid unnecessary re-renders while dragging
   const dragStartPos = useRef(null);
 
-  const length = testimonials.items.length;
+  const itemsCount = testimonials.items.length;
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,11 +34,11 @@ export default function TestimonialsSection() {
   }, []);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? itemsCount - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === itemsCount - 1 ? 0 : prev + 1));
   };
 
   const goToIndex = (index) => {
@@ -60,13 +69,6 @@ export default function TestimonialsSection() {
     }
 
     dragStartPos.current = null;
-  };
-
-  const getOffset = (index) => {
-    let offset = index - currentIndex;
-    if (offset > Math.floor(length / 2)) offset -= length;
-    if (offset < -Math.floor(length / 2)) offset += length;
-    return offset;
   };
 
   return (
@@ -123,7 +125,7 @@ export default function TestimonialsSection() {
           }}
         >
           {testimonials.items.map((testimonial, index) => {
-            const offset = getOffset(index);
+            const offset = getOffset(index, currentIndex, itemsCount);
             const absOffset = Math.abs(offset);
             const isActive = offset === 0;
 
@@ -136,7 +138,8 @@ export default function TestimonialsSection() {
                 className={clsx(
                   "absolute flex flex-col overflow-hidden rounded-2xl p-4 sm:p-8",
                   "h-[550px] w-full max-w-xl",
-                  "transition-all duration-700 ease-in-out",
+                  "transition-opacity",
+                  "transition-transform duration-700 ease-in-out",
                   "sm:h-[500px] md:h-[450px]"
                 )}
 
@@ -284,7 +287,7 @@ export default function TestimonialsSection() {
             className="text-center text-sm font-medium tracking-widest"
             style={{ color: "var(--muted-foreground)" }}
           >
-            {currentIndex + 1} / {length}
+            {currentIndex + 1} / {itemsCount}
           </div>
         </div>
       </div>

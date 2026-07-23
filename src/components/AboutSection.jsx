@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import ArrowUpRight from "./icons/ArrowUpRight.jsx";
 import SectionTitle from "./SectionTitle.jsx";
 import data from "../data/portfolio.json";
 import CopyButton from "./CopyButton.jsx";
+import { staggerContainer, staggerItem } from "../utils/animations.js";
 
 export default function AboutSection() {
   const { personal, sectionTitles } = data;
@@ -40,15 +42,17 @@ export default function AboutSection() {
             <h3 className="text-h3 mb-3" style={{ color: "var(--accent)" }}>
               Business Impact
             </h3>
-            <div
-              className="stagger-animate space-y-px"
+            <motion.div
+              className="space-y-px"
               style={{ background: "var(--border)" }}
+              {...staggerContainer}
             >
               {personal.aboutBio.impacts.map((impact) => (
-                <div
+                <motion.div
                   key={impact.title}
-                  className="stagger-item px-6 py-8 sm:px-8 sm:py-10"
+                  className="px-6 py-8 sm:px-8 sm:py-10"
                   style={{ background: "var(--surface)" }}
+                  {...staggerItem}
                 >
                   <h3
                     className="text-h3 mb-3 flex items-center gap-2"
@@ -68,9 +72,9 @@ export default function AboutSection() {
                     </strong>{" "}
                     {impact.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <div

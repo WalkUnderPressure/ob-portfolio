@@ -92,37 +92,37 @@
     "about": {
       "subheading": "Collaborate",
       "heading": "About me",
-      "bgImage": "/sections-bg/collaborate.avif"
+      "bgImage": "/sections-bg/collaborate.jpg"
     },
     "skills": {
       "subheading": "Craft",
       "heading": "What I bring",
-      "bgImage": "/sections-bg/craft.avif"
+      "bgImage": "/sections-bg/craft.jpg"
     },
     "experience": {
       "subheading": "My experience",
       "heading": "Journey",
-      "bgImage": "/sections-bg/journey.avif"
+      "bgImage": "/sections-bg/journey.jpg"
     },
     "projects": {
       "subheading": "Work",
       "heading": "Selected work",
-      "bgImage": "/sections-bg/work.avif"
+      "bgImage": "/sections-bg/work.jpg"
     },
     "education": {
       "subheading": "Foundation",
       "heading": "Education",
-      "bgImage": "/sections-bg/foundation.avif"
+      "bgImage": "/sections-bg/foundation.jpg"
     },
     "testimonials": {
       "subheading": "Voices",
       "heading": "Kind words",
-      "bgImage": "/sections-bg/feedback.png"
+      "bgImage": "/sections-bg/feedback.jpg"
     },
     "contact": {
       "subheading": "Connect",
       "heading": "Let's talk",
-      "bgImage": "/sections-bg/connect.avif"
+      "bgImage": "/sections-bg/connect.jpg"
     }
   },
   "skills": {
@@ -236,7 +236,7 @@
           },
           {
             "name": "Zustand",
-            "icon": "/skills/zustand.svg"
+            "icon": "/skills/zustand.png"
           },
           {
             "name": "Redux",
@@ -395,7 +395,7 @@
         "title": "PsychAssist",
         "description": "An AI-powered platform that helps psychologists draft clinical assessment reports using their own voice and terminology. Built the React/TypeScript frontend with OpenAI API integration, enabling psychologists to generate assessment reports in minutes rather than hours.",
         "url": "https://www.psychassist.ai/",
-        "image": "/projects/psychassist.png",
+        "image": "/projects/psychassist.jpg",
         "tags": []
       },
       {
@@ -403,7 +403,7 @@
         "title": "Circle.Help",
         "description": "A social platform connecting people who need help with volunteers ready to give it. Built the real-time matching interface with React, Node.js, MongoDB, and Socket.io, enabling instant coordination between requesters and volunteers.",
         "url": "https://circle.help/",
-        "image": "/projects/circle-help.png",
+        "image": "/projects/circle-help.jpg",
         "tags": []
       },
       {
@@ -411,7 +411,7 @@
         "title": "Circle of Toys",
         "description": "A donation platform where people send toys directly to children in need. Built the end-to-end donation flow with React, Node.js, MongoDB, and Stripe, streamlining the process from donor to recipient.",
         "url": "https://circleoftoys.online/",
-        "image": "/projects/circle-of-toys.png",
+        "image": "/projects/circle-of-toys.jpg",
         "tags": []
       },
       {
@@ -419,7 +419,7 @@
         "title": "Podly",
         "description": "A research tool that helps print-on-demand sellers find trending products and check trademarks. Built the data-intensive search and analysis interface with React, TypeScript, Node.js, and GraphQL, enabling sellers to identify profitable products faster.",
         "url": "https://podly.co/",
-        "image": "/projects/podly.png",
+        "image": "/projects/podly.jpg",
         "tags": []
       },
       {
@@ -427,7 +427,7 @@
         "title": "Mengantar",
         "description": "A shipping platform for Indonesian sellers with COD delivery, tracking, and discounted rates. Built the full-stack logistics interface with React, Express.js, MongoDB, and REST API, processing shipments with real-time tracking and cash-on-delivery support.",
         "url": "https://www.mengantar.com/",
-        "image": "/projects/mengantar.png",
+        "image": "/projects/mengantar.jpg",
         "tags": []
       }
     ]

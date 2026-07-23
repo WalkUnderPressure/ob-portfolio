@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+import clsx from "clsx";
+
 import SectionTitle from "./SectionTitle.jsx";
 import ArrowUpRight from "./icons/ArrowUpRight.jsx";
 import data from "../data/portfolio.json";
+import {
+  getProjectItem,
+  staggerContainer,
+  staggerItem,
+} from "../utils/animations.js";
 
 export default function ProjectsSection() {
   const { projects, sectionTitles } = data;
@@ -31,14 +39,22 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        <div className="stagger-animate mt-12 flex flex-col space-y-8 sm:space-y-16">
-          {projects.items.map((project) => (
-            <a
+        <motion.div
+          className="mt-12 flex flex-col space-y-8 sm:space-y-16"
+          {...staggerContainer}
+        >
+          {projects.items.map((project, index) => (
+            <motion.a
               key={project.id}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card stagger-item group block grid grid-cols-1 items-center gap-6 sm:grid-cols-12 sm:gap-8 md:gap-12"
+              className={clsx(
+                "project-card group block grid grid-cols-1 items-center gap-6",
+                "sm:grid-cols-12 sm:gap-8 md:gap-12",
+                "origin-center"
+              )}
+              {...getProjectItem(index)}
             >
               <div className="md:col-span-7">
                 <div
@@ -132,9 +148,9 @@ export default function ProjectsSection() {
                   </div>
                 )}
               </div>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

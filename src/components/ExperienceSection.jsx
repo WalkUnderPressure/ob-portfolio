@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle.jsx";
 import data from "../data/portfolio.json";
+import { timelineItem } from "../utils/animations.js";
 
 export default function ExperienceSection() {
   const { experience, sectionTitles } = data;
@@ -29,14 +31,15 @@ export default function ExperienceSection() {
         </div>
         <div className="relative">
           {experience.items.map((exp, index) => (
-            <div
+            <motion.div
               key={exp.id}
-              className="timeline-animate grid grid-cols-1 gap-6 py-10 md:grid-cols-12"
+              className="grid grid-cols-1 gap-6 py-10 md:grid-cols-12"
               style={
                 index > 0
                   ? { borderTop: "1px solid var(--border)" }
                   : { borderTop: "none" }
               }
+              {...timelineItem}
             >
               <div className="min-w-0 md:col-span-4">
                 <div
@@ -73,7 +76,7 @@ export default function ExperienceSection() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

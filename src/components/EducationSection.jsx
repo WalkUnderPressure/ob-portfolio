@@ -1,5 +1,8 @@
+import { motion } from "framer-motion";
+
 import SectionTitle from "./SectionTitle.jsx";
 import data from "../data/portfolio.json";
+import { timelineItem } from "../utils/animations.js";
 
 export default function EducationSection() {
   const { education, sectionTitles } = data;
@@ -38,7 +41,11 @@ export default function EducationSection() {
           {/* Timeline entries */}
           <div className="space-y-8">
             {education.items.map((edu) => (
-              <div key={edu.degree} className="relative flex gap-6 md:gap-8">
+              <motion.div
+                key={edu.degree}
+                className="relative flex gap-6 md:gap-8"
+                {...timelineItem}
+              >
                 {/* Timeline marker with icon */}
                 <div className="relative z-10 flex-shrink-0">
                   <div
@@ -73,7 +80,7 @@ export default function EducationSection() {
                     {edu.institution}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
