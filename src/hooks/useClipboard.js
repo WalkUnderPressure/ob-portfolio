@@ -26,7 +26,7 @@ export function useClipboard(timeout = 2000) {
         return false;
       }
     },
-    [timeout]
+    [isDev, timeout]
   );
 
   useEffect(() => {

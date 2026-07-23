@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
 import SectionTitle from "./SectionTitle.jsx";

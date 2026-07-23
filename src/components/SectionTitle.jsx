@@ -1,11 +1,6 @@
 import clsx from "clsx";
 
-export default function SectionTitle({
-  subheading,
-  heading,
-  sectionId,
-  bgImage,
-}) {
+export default function SectionTitle({ subheading, heading, bgImage }) {
   return (
     <div className="px-3">
       <div

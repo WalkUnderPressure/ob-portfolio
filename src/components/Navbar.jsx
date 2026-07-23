@@ -17,7 +17,7 @@ export default function Navbar() {
       }}
     >
       <div className="mx-auto h-full max-w-7xl px-6 py-4">
-        <div className="flex h-full items-center justify-between">
+        <div className="flex h-full items-center justify-between gap-4">
           <button
             className={clsx(
               "flex flex-row items-center justify-center",
