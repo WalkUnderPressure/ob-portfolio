@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/fonts/jet_brains_mono/JetBrainsMono.ttf") format("ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 *,
@@ -7,21 +15,14 @@
   border-width: 0;
   border-style: solid;
   border-color: var(--border);
+
+  font-family: "JetBrainsMono";
 }
 
 html,
 :host {
   line-height: 1.5;
   tab-size: 4;
-  font-family:
-    "Inter",
-    ui-sans-serif,
-    system-ui,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    Segoe UI Symbol,
-    "Noto Color Emoji";
   scroll-behavior: smooth;
   background-color: var(--background);
 }
@@ -47,21 +48,13 @@ body {
   --accent-foreground: #0b0e14;
 }
 
+ul li::marker {
+  color: var(--accent);
+}
+
 .parallax-tpl {
   background-color: var(--background);
   color: var(--foreground);
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
-}
-
-.parallax-tpl h1,
-.parallax-tpl h2,
-.parallax-tpl h3,
-.parallax-tpl h4 {
-  font-family: "Inter", system-ui, sans-serif;
 }
 
 .parallax-tpl ::selection {

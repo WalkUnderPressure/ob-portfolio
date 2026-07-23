@@ -19,7 +19,7 @@ export default function ContactSection() {
       <div className="mx-auto max-w-5xl px-4 py-12">
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-12">
           <h2
-            className="text-h2 col-span-1 md:col-span-4"
+            className="text-h2 col-span-1 whitespace-nowrap md:col-span-4"
             style={{ color: "var(--foreground)" }}
           >
             {sectionTitles.contact.heading}
@@ -94,7 +94,7 @@ export default function ContactSection() {
           <a
             href={`mailto:${personal.email}`}
             className={clsx(
-              "cursor-pointer rounded-lg px-6 py-4 text-2xl font-black",
+              "cursor-pointer rounded-lg px-4 py-3 text-2xl font-black",
               "transition-all duration-200 hover:scale-110",
               "whitespace-nowrap"
             )}

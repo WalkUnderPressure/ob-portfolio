@@ -131,7 +131,7 @@ function InfoRow({ icon, label, value, withCopy = false }) {
           {label}
         </div>
         <div
-          className="text-h3 flex flex-row items-center justify-start gap-4 break-words"
+          className="flex flex-row items-center justify-start gap-4 text-xl font-black break-words"
           style={{ color: "var(--foreground)", overflowWrap: "anywhere" }}
         >
           {value}

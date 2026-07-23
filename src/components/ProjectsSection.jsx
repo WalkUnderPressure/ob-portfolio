@@ -14,9 +14,9 @@ export default function ProjectsSection() {
       />
 
       <div className="mx-auto max-w-6xl px-4 pt-12">
-        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-12">
+        <div className="flex flex-col items-start justify-between gap-3 md:flex-row md:items-center md:gap-6">
           <h2
-            className="text-h2 col-span-1 md:col-span-4"
+            className="text-h2 col-span-1 whitespace-nowrap md:col-span-4"
             style={{ color: "var(--foreground)" }}
           >
             {sectionTitles.projects.heading}
@@ -30,7 +30,8 @@ export default function ProjectsSection() {
             {projects.description}
           </p>
         </div>
-        <div className="stagger-animate flex flex-col space-y-8 sm:space-y-16">
+
+        <div className="stagger-animate mt-12 flex flex-col space-y-8 sm:space-y-16">
           {projects.items.map((project) => (
             <a
               key={project.id}
@@ -77,7 +78,7 @@ export default function ProjectsSection() {
                 >
                   Project {project.id}
                 </div>
-                <div className="mb-4 flex items-start gap-3">
+                <div className="mb-4 flex items-center gap-3">
                   <h3
                     className="text-h3 flex-1"
                     style={{ color: "var(--foreground)" }}
@@ -98,7 +99,8 @@ export default function ProjectsSection() {
                     </span>
                   </span>
                 </div>
-                <div className="view-project-text opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+
+                <div className="view-project-text hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:flex">
                   <span
                     className="text-sm font-medium"
                     style={{ color: "var(--accent)" }}

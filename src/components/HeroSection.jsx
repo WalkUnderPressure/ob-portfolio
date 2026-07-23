@@ -37,7 +37,7 @@ export default function HeroSection() {
         className="relative z-10 mx-auto max-w-5xl px-6 pt-28 pb-16 text-center sm:px-8 sm:pt-32"
         style={{ color: "var(--foreground)" }}
       >
-        <div className="mb-8 flex justify-center">
+        <div className="mb-4 flex justify-center md:mb-8">
           <div className="relative" style={{ width: "150px", height: "150px" }}>
             <div
               className="flex h-full w-full items-center justify-center overflow-hidden rounded-full"
@@ -59,24 +59,28 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <p className="text-caption mb-6" style={{ color: "var(--accent)" }}>
+        <p
+          className="text-caption mb-3 md:mb-6"
+          style={{ color: "var(--accent)" }}
+        >
           {personal.availability}
         </p>
-        <h1 className="text-h1 mb-6">{personal.name}</h1>
+        <h1 className="text-h1 mb-3 md:mb-6">{personal.name}</h1>
         <h2
-          className="text-h2 mb-8 font-light"
+          className="text-h2 mb-4 font-light md:mb-8"
           style={{ color: "rgba(245, 245, 240, 0.85)" }}
         >
           {personal.title}
         </h2>
         {/* <p className="text-body max-w-2xl mx-auto mb-12" style={{ color: "rgba(245, 245, 240, 0.6)" }}> */}
         <p
-          className="text-body mx-auto mb-12 max-w-2xl"
+          className="text-body mx-auto mb-6 max-w-2xl md:mb-12"
           style={{ color: "rgba(245, 245, 240, 0.85)" }}
         >
           {personal.heroDescription}
         </p>
-        <div className="mb-16 flex items-center justify-center gap-3">
+
+        <div className="mb-8 flex items-center justify-center gap-3 md:mb-16">
           <a
             href={personal.linkedin}
             target="_blank"
