@@ -14,7 +14,7 @@ export default function ProjectsSection() {
   const { projects, sectionTitles } = data;
 
   return (
-    <section id="projects" className="relative pt-16">
+    <section id="projects" className="relative overflow-x-clip pt-16">
       <SectionTitle
         subheading={sectionTitles.projects.subheading}
         heading={sectionTitles.projects.heading}

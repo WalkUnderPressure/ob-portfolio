@@ -8,7 +8,7 @@ export default function EducationSection() {
   const { education, sectionTitles } = data;
 
   return (
-    <section id="education" className="relative pt-16">
+    <section id="education" className="relative overflow-x-clip pt-16">
       <SectionTitle
         subheading={sectionTitles.education.subheading}
         heading={sectionTitles.education.heading}
